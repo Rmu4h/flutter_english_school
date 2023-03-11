@@ -6,7 +6,7 @@ class FooterItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      // height: 200,
       child: Text('footer'),
     );
   }
