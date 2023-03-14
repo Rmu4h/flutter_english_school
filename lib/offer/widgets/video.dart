@@ -19,7 +19,7 @@ class _YoutubeAppDemoState extends State<YoutubeAppDemo> {
     super.initState();
 
     _controller = YoutubePlayerController.fromVideoId(
-      videoId: 'tcodrIK2P_I',
+      videoId: 'U297QPN2G1Q',
       autoPlay: false,
       params: const YoutubePlayerParams(showFullscreenButton: true),
     );
@@ -41,15 +41,12 @@ class _YoutubeAppDemoState extends State<YoutubeAppDemo> {
           body: LayoutBuilder(
             builder: (context, constraints) {
               if (kIsWeb && constraints.maxWidth > 750) {
-                return Expanded(
-                      flex: 5,
-                      child: Column(
+                return Column(
                         children: [
                           player,
-                          const VideoPositionIndicator(),
+                          const Expanded(child: VideoPositionIndicator()),
                         ],
-                      ),
-                    );
+                      );
               }
 
               return ListView(

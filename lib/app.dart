@@ -22,28 +22,11 @@ class App extends StatelessWidget {
                           child: HeaderItem()
                       ),
                   Expanded(
-                      // flex: 6,
                       child: Container(
-                        height: 900,
+                        height: 6000,
                         child: OfferItem()
                       )
                   ),
-                  Expanded(
-                    // flex: 6,
-                      child: Container(
-                          height: 250,
-                          child: OfferItem()
-                      )
-                  ),
-                  Expanded(
-                    // flex: 6,
-                      child: Container(
-                          height: 450,
-                          child: OfferItem()
-                      )
-                  ),
-                  // Expanded(
-                      // flex: 1,
                   Container(
                         height: 120,
                         child: FooterItem()
