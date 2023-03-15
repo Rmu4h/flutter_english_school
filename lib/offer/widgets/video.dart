@@ -7,6 +7,8 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 ///
 class YoutubeAppDemo extends StatefulWidget {
+  const YoutubeAppDemo({super.key});
+
   @override
   _YoutubeAppDemoState createState() => _YoutubeAppDemoState();
 }

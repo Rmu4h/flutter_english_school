@@ -1,7 +1,5 @@
 import 'dart:ui';
 
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/video.dart';
@@ -15,7 +13,7 @@ class OfferItem extends StatefulWidget {
 
 class _OfferItemState extends State<OfferItem> {
   final ScrollController controller = ScrollController();
-  List<bool> _isShowQuestions = [false,false,false,false,false];
+  final List<bool> _isShowQuestions = [false,false,false,false,false];
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +22,6 @@ class _OfferItemState extends State<OfferItem> {
       //desktop
       if (constrains.maxWidth >= 1200) {
         double width = MediaQuery.of(context).size.width;
-        print('big screen');
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -54,11 +51,11 @@ class _OfferItemState extends State<OfferItem> {
                       EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
+                    children: const [
+                      SizedBox(
                         height: 20,
                       ),
-                      const Text(
+                      Text(
                         'Вільно англійською простіше ніж ти думаєш',
                         style: TextStyle(
                           fontSize: 24,
@@ -66,10 +63,10 @@ class _OfferItemState extends State<OfferItem> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 20,
                       ),
-                      const Text(
+                      Text(
                         'Розкрийте свій ораторський потенціал з розмовним клубом Lets Talk',
                         style: TextStyle(
                           fontSize: 30,
@@ -77,10 +74,10 @@ class _OfferItemState extends State<OfferItem> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 20,
                       ),
-                      const Text(
+                      Text(
                         'Тут ми обговорюємо цікаві теми, спілкуємося, сміємося та навчаємося легко та невимушено. Ми зустрічаємось у бібліотеці та насолоджуємось чаєм чи кавою. Друзі ласкаво просимо!',
                         style: TextStyle(
                           fontSize: 20,
@@ -88,14 +85,14 @@ class _OfferItemState extends State<OfferItem> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 30,
                       ),
                       Expanded(child: YoutubeAppDemo()),
                     ],
                   ),
                 )),
-            Container(
+            SizedBox(
               height: 200,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
@@ -151,7 +148,7 @@ class _OfferItemState extends State<OfferItem> {
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               height: 500,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
@@ -163,42 +160,27 @@ class _OfferItemState extends State<OfferItem> {
                     // This next line does the trick.
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
-                      Container(
-                        // width: 300.0,
-                        child: Image.asset(
-                          'assets/reviews/reviews-ins1.jpg',
-                          // height: 300,
-                          // width: 200,
-                        ),
+                      Image.asset(
+                        'assets/reviews/reviews-ins1.jpg',
+                        // height: 300,
+                        // width: 200,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
-                      Container(
-                        // width: 200.0,
-                        child: Image.asset('assets/reviews/reviews-ins2.jpg'),
-                      ),
-                      SizedBox(
+                      Image.asset('assets/reviews/reviews-ins2.jpg'),
+                      const SizedBox(
                         width: 20,
                       ),
-                      Container(
-                        // width: 200.0,
-                        child: Image.asset('assets/reviews/reviews-ins3.jpeg'),
-                      ),
-                      SizedBox(
+                      Image.asset('assets/reviews/reviews-ins3.jpeg'),
+                      const SizedBox(
                         width: 20,
                       ),
-                      Container(
-                        // width: 200.0,
-                        child: Image.asset('assets/reviews/reviews-ins4.jpg'),
-                      ),
-                      SizedBox(
+                      Image.asset('assets/reviews/reviews-ins4.jpg'),
+                      const SizedBox(
                         width: 20,
                       ),
-                      Container(
-                        // width: 200.0,
-                        child: Image.asset('assets/reviews/reviews-ins5.jpg'),
-                      ),
+                      Image.asset('assets/reviews/reviews-ins5.jpg'),
                     ],
                   ),
                 ),
@@ -211,8 +193,8 @@ class _OfferItemState extends State<OfferItem> {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff00F2A9),
-                  shape: StadiumBorder(),
+                  backgroundColor: const Color(0xff00F2A9),
+                  shape: const StadiumBorder(),
                   // side: BorderSide(color: Color(0xff322153), width: 2),
                 ),
                 child: const Text(
@@ -225,10 +207,10 @@ class _OfferItemState extends State<OfferItem> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Container(
+            SizedBox(
               height: 2600,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
@@ -251,7 +233,7 @@ class _OfferItemState extends State<OfferItem> {
                     Center(
                       child: Card(
                         elevation: 0,
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                           side: BorderSide(
                             color: Color(0xff00F2A9),
                             width: 3,
@@ -301,7 +283,7 @@ class _OfferItemState extends State<OfferItem> {
                     Center(
                       child: Card(
                         elevation: 0,
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                           side: BorderSide(
                             color: Color(0xff00F2A9),
                             width: 3,
@@ -345,7 +327,7 @@ class _OfferItemState extends State<OfferItem> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 40,
                     ),
                     Center(
@@ -395,13 +377,13 @@ class _OfferItemState extends State<OfferItem> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 40,
                     ),
                     Center(
                       child: Card(
                         elevation: 0,
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                           side: BorderSide(
                             color: Color(0xff00F2A9),
                             width: 3,
@@ -445,13 +427,13 @@ class _OfferItemState extends State<OfferItem> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 40,
                     ),
                     Center(
                       child: Card(
                         elevation: 0,
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                           side: BorderSide(
                             color: Color(0xff00F2A9),
                             width: 3,
@@ -634,15 +616,15 @@ class _OfferItemState extends State<OfferItem> {
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               // color: const Color(0xff322153),
-              height: 550,
+              height: 655,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
                 child: Column(
                   children: [
-                    SizedBox(height: 40,),
-                    Text(
+                    const SizedBox(height: 40,),
+                    const Text(
                       'Питання що часто задають',
                       style: TextStyle(
                         fontSize: 30,
@@ -650,11 +632,11 @@ class _OfferItemState extends State<OfferItem> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
                     Card(
                       child: ListTile(
-                        title: Text('Які формати Speaking club пропонує ваша компанія?'),
-                        trailing: Icon(Icons.arrow_drop_down_circle),
+                        title: const Text('Які формати Speaking club пропонує ваша компанія?'),
+                        trailing: const Icon(Icons.arrow_drop_down_circle),
                         onTap: () {
                           setState(
                                 () {
@@ -666,13 +648,13 @@ class _OfferItemState extends State<OfferItem> {
                     ),
                     Visibility(
                       visible: _isShowQuestions[0],
-                      child: Text('від онлайн зустрічей до живих зустрічей з носіями мови')
+                      child: const Text('від онлайн зустрічей до живих зустрічей з носіями мови')
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
                     Card(
                       child: ListTile(
-                        title: Text('Які вимоги до рівня англійської мови для участі в Speaking club?'),
-                        trailing: Icon(Icons.arrow_drop_down_circle),
+                        title: const Text('Які вимоги до рівня англійської мови для участі в Speaking club?'),
+                        trailing: const Icon(Icons.arrow_drop_down_circle),
                         onTap: () {
                           setState(
                                 () {
@@ -684,13 +666,13 @@ class _OfferItemState extends State<OfferItem> {
                     ),
                     Visibility(
                         visible: _isShowQuestions[1],
-                        child: Text('Ми приймаємо учасників на всіх рівнях володіння англійською мовою - від початківців до продвинутих. Від наших учасників очікується бажання вивчати мову та брати активну участь у заняттях.')
+                        child: const Text('Ми приймаємо учасників на всіх рівнях володіння англійською мовою - від початківців до продвинутих. Від наших учасників очікується бажання вивчати мову та брати активну участь у заняттях.')
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
                     Card(
                       child: ListTile(
-                        title: Text('Які вимоги до рівня англійської мови для участі в Speaking club?'),
-                        trailing: Icon(Icons.arrow_drop_down_circle),
+                        title: const Text('Які вимоги до рівня англійської мови для участі в Speaking club?'),
+                        trailing: const Icon(Icons.arrow_drop_down_circle),
                         onTap: () {
                           setState(
                                 () {
@@ -700,15 +682,15 @@ class _OfferItemState extends State<OfferItem> {
                         },
                       ),
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
                     Visibility(
                         visible: _isShowQuestions[2],
-                        child: Text('Теми для обговорення на заняттях Speaking club можуть бути різними - від повсякденного спілкування до бізнес-тем. Ми стараємося підібрати теми, які будуть цікавими для наших учасників та допоможуть їм покращити рівень володіння англійською мовою')
+                        child: const Text('Теми для обговорення на заняттях Speaking club можуть бути різними - від повсякденного спілкування до бізнес-тем. Ми стараємося підібрати теми, які будуть цікавими для наших учасників та допоможуть їм покращити рівень володіння англійською мовою')
                     ),
                     Card(
                       child: ListTile(
-                        title: Text('Чи можна взяти пробне заняття?'),
-                        trailing: Icon(Icons.arrow_drop_down_circle),
+                        title: const Text('Чи можна взяти пробне заняття?'),
+                        trailing: const Icon(Icons.arrow_drop_down_circle),
                         onTap: () {
                           setState(
                                 () {
@@ -718,14 +700,14 @@ class _OfferItemState extends State<OfferItem> {
                         },
                       ),
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
                     Visibility(
                       visible: _isShowQuestions[3],
-                      child: Text('Так, ми пропонуємо пробне заняття, під час якого ви зможете оцінити наші методи навчання та визначити, чи підходить вам формат Speaking club.')),
+                      child: const Text('Так, ми пропонуємо пробне заняття, під час якого ви зможете оцінити наші методи навчання та визначити, чи підходить вам формат Speaking club.')),
                     Card(
                       child: ListTile(
-                        title: Text('Які вікові обмеження для участі в Speaking club?'),
-                        trailing: Icon(Icons.arrow_drop_down_circle),
+                        title: const Text('Які вікові обмеження для участі в Speaking club?'),
+                        trailing: const Icon(Icons.arrow_drop_down_circle),
                         onTap: () {
                           setState(
                                 () {
@@ -735,75 +717,75 @@ class _OfferItemState extends State<OfferItem> {
                         },
                       ),
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
                     Visibility(
                         visible: _isShowQuestions[4],
-                        child: Text('У нас немає вікових обмежень для участі в Speaking club. Ми раді бачити наших учасників будь-якого віку, які бажають вивчати англійську мову та розвиватися комунікативно?')),
+                        child: const Text('У нас немає вікових обмежень для участі в Speaking club. Ми раді бачити наших учасників будь-якого віку, які бажають вивчати англійську мову та розвиватися комунікативно?')),
                   ],
                 ),
               )
             ),
-            Container(
+            SizedBox(
               height: 600,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
                 child: Center(
                   child: Column(
                     children: [
-                      SizedBox(height: 20,),
-                      Text('Отримай Справжній Результат',
+                      const SizedBox(height: 20,),
+                      const Text('Отримай Справжній Результат',
                         style: TextStyle(
                           fontSize: 24,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                         ),
-                      SizedBox(height: 20,),
-                      Text('Якщо ви справді докладаєте всіх зусиль але заговорити чи покращити свою розмовну мову не вийде',
+                      const SizedBox(height: 20,),
+                      const Text('Якщо ви справді докладаєте всіх зусиль але заговорити чи покращити свою розмовну мову не вийде',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('Тоді ми повернемо вам кошти. Ви можете скасувати абонемент в будь-який час',
+                      const Text('Тоді ми повернемо вам кошти. Ви можете скасувати абонемент в будь-який час',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20,),
-                      Text('Вам непотрібно роками вивчати Англійську щоб гарно на ній говорити',
+                      const SizedBox(height: 20,),
+                      const Text('Вам непотрібно роками вивчати Англійську щоб гарно на ній говорити',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('Так вам буде спочатку незручно але результат того вартий',
+                      const Text('Так вам буде спочатку незручно але результат того вартий',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20,),
-                      Text('Це чудова можливість познайомитися зі схожими за інтересами людьми, ',
+                      const SizedBox(height: 20,),
+                      const Text('Це чудова можливість познайомитися зі схожими за інтересами людьми, ',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('знайти нових друзів та отримати можливість для співпраці та розвитку в різних галузях.',
+                      const Text('знайти нових друзів та отримати можливість для співпраці та розвитку в різних галузях.',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -814,8 +796,8 @@ class _OfferItemState extends State<OfferItem> {
                                 height: 150,
                                 width: 100,
                               ),
-                              Text('Ми створили постійно доступний портал в телеграмі'),
-                              Text('Де публікуєм новини/івенти і цікавинки клубу'),
+                              const Text('Ми створили постійно доступний портал в телеграмі'),
+                              const Text('Де публікуєм новини/івенти і цікавинки клубу'),
                             ],
                           ),
                           Column(
@@ -825,9 +807,9 @@ class _OfferItemState extends State<OfferItem> {
                                 height: 150,
                                 width: 100,
                               ),
-                              Text('Відкриємо нові кар\'єрні можливості для вас. '),
-                              Text('В середньому, люди з хорошим рівнем англ '),
-                              Text('заробляють на 30% більше ніж інші'),
+                              const Text('Відкриємо нові кар\'єрні можливості для вас. '),
+                              const Text('В середньому, люди з хорошим рівнем англ '),
+                              const Text('заробляють на 30% більше ніж інші'),
                             ],
                           ),
                           Column(
@@ -837,8 +819,8 @@ class _OfferItemState extends State<OfferItem> {
                                 height: 150,
                                 width: 100,
                               ),
-                              Text('Наша програма спільноти надасть вам все,'),
-                              Text('Що необхідно для ваших цілей.'),
+                              const Text('Наша програма спільноти надасть вам все,'),
+                              const Text('Що необхідно для ваших цілей.'),
                             ],
                           ),
                         ],
@@ -848,67 +830,67 @@ class _OfferItemState extends State<OfferItem> {
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               height: 600,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
                 child: Center(
                   child: Column(
                     children: [
-                      SizedBox(height: 20,),
-                      Text('Ціни',
+                      const SizedBox(height: 20,),
+                      const Text('Ціни',
                         style: TextStyle(
                           fontSize: 24,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20,),
-                      Text('Якщо ви справді докладаєте всіх зусиль але заговорити чи покращити свою розмовну мову не вийде',
+                      const SizedBox(height: 20,),
+                      const Text('Якщо ви справді докладаєте всіх зусиль але заговорити чи покращити свою розмовну мову не вийде',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('Тоді ми повернемо вам кошти. Ви можете скасувати абонемент в будь-який час',
+                      const Text('Тоді ми повернемо вам кошти. Ви можете скасувати абонемент в будь-який час',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20,),
-                      Text('Вам непотрібно роками вивчати Англійську щоб гарно на ній говорити',
+                      const SizedBox(height: 20,),
+                      const Text('Вам непотрібно роками вивчати Англійську щоб гарно на ній говорити',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('Так вам буде спочатку незручно але результат того вартий',
+                      const Text('Так вам буде спочатку незручно але результат того вартий',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20,),
-                      Text('Це чудова можливість познайомитися зі схожими за інтересами людьми, ',
+                      const SizedBox(height: 20,),
+                      const Text('Це чудова можливість познайомитися зі схожими за інтересами людьми, ',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('знайти нових друзів та отримати можливість для співпраці та розвитку в різних галузях.',
+                      const Text('знайти нових друзів та отримати можливість для співпраці та розвитку в різних галузях.',
                         style: TextStyle(
                           fontSize: 18,
-                          color: const Color(0xff322153),
+                          color: Color(0xff322153),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -919,8 +901,8 @@ class _OfferItemState extends State<OfferItem> {
                                 height: 150,
                                 width: 100,
                               ),
-                              Text('Ми створили постійно доступний портал в телеграмі'),
-                              Text('Де публікуєм новини/івенти і цікавинки клубу'),
+                              const Text('Ми створили постійно доступний портал в телеграмі'),
+                              const Text('Де публікуєм новини/івенти і цікавинки клубу'),
                             ],
                           ),
                           Column(
@@ -930,9 +912,9 @@ class _OfferItemState extends State<OfferItem> {
                                 height: 150,
                                 width: 100,
                               ),
-                              Text('Відкриємо нові кар\'єрні можливості для вас. '),
-                              Text('В середньому, люди з хорошим рівнем англ '),
-                              Text('заробляють на 30% більше ніж інші'),
+                              const Text('Відкриємо нові кар\'єрні можливості для вас. '),
+                              const Text('В середньому, люди з хорошим рівнем англ '),
+                              const Text('заробляють на 30% більше ніж інші'),
                             ],
                           ),
                           Column(
@@ -942,8 +924,8 @@ class _OfferItemState extends State<OfferItem> {
                                 height: 150,
                                 width: 100,
                               ),
-                              Text('Наша програма спільноти надасть вам все,'),
-                              Text('Що необхідно для ваших цілей.'),
+                              const Text('Наша програма спільноти надасть вам все,'),
+                              const Text('Що необхідно для ваших цілей.'),
                             ],
                           ),
                         ],
@@ -975,11 +957,11 @@ class _OfferItemState extends State<OfferItem> {
             // Expanded(
             //     child: Text(
             //         'Отримай реальні результати. Далі потиваційна хуйня яка грає з емоціями людини та дає можливість повернути бабки якщо ви невідчуєте прогрессу')),
-            Expanded(child: Text('Блок з цінами')),
-            Expanded(
+            const Expanded(child: Text('Блок з цінами')),
+            const Expanded(
                 child:
                     Text('Вєбати ще один блок з скрінами про гарні відгуки')),
-            Expanded(
+            const Expanded(
                 child: Text('Блок з популярними питаннями та відповідями')),
           ],
         );

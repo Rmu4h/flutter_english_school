@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../app.dart';
 
 class HeaderItem extends StatefulWidget {
   const HeaderItem({Key? key}) : super(key: key);
@@ -21,143 +19,144 @@ class _HeaderItemState extends State<HeaderItem> {
       //desktop
       if (constrains.maxWidth >= 1200) {
         double width = MediaQuery.of(context).size.width;
-        print('big screen');
         return Padding(
               padding: EdgeInsets.fromLTRB(width/5, 25.0, width/5, 25.0),
-              child: Container(
-                // height: 100,
-                child: Row(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xff00F2A9),
-                        shape: StadiumBorder(),
-                        // side: BorderSide(color: Color(0xff322153), width: 2),
-                      ),
-                      child: const Text(
-                        'ПРИЄДНАТИСЬ',
-                        style: TextStyle(
-                          color: Color(0xff322153),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+              child: Row(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xff00F2A9),
+                      shape: const StadiumBorder(),
+                      // side: BorderSide(color: Color(0xff322153), width: 2),
+                    ),
+                    child: const Text(
+                      'ПРИЄДНАТИСЬ',
+                      style: TextStyle(
+                        color: Color(0xff322153),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    TextButton(
-                      style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.resolveWith<Color>(
-                                (Set<MaterialState> states) {
-                              // if (states.contains(MaterialState.focused))
-                              //   return Colors.red;
-                              if (states.contains(MaterialState.hovered))
-                                return Color(0xff322153);
-                              // if (states.contains(MaterialState.pressed))
-                              //   return Colors.blue;
-                              return const Color(
-                                  0xff16D69C); // null throus error in flutter 2.2+.
-                            }),
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        'Філософія',
-                        style: TextStyle(
-                            fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    TextButton(
-                      style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.resolveWith<Color>(
-                                (Set<MaterialState> states) {
-                              // if (states.contains(MaterialState.focused))
-                              //   return Colors.red;
-                              if (states.contains(MaterialState.hovered))
-                                return Color(0xff322153);
-                              // if (states.contains(MaterialState.pressed))
-                              //   return Colors.blue;
-                              return const Color(
-                                  0xff16D69C); // null throus error in flutter 2.2+.
-                            }),
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        'Про нас',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    IconButton(
-                      icon: Image.asset('assets/img/logo.png'),
-                      iconSize: 50,
-                      onPressed: () {},
-                    ),
-                    TextButton(
-                      style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.resolveWith<Color>(
-                                (Set<MaterialState> states) {
-                              // if (states.contains(MaterialState.focused))
-                              //   return Colors.red;
-                              if (states.contains(MaterialState.hovered))
-                                return Color(0xff322153);
-                              // if (states.contains(MaterialState.pressed))
-                              //   return Colors.blue;
-                              return const Color(
-                                  0xff16D69C); // null throus error in flutter 2.2+.
-                            }),
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        'Що я отримаю',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    TextButton(
-                      style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.resolveWith<Color>(
-                                (Set<MaterialState> states) {
-                              // if (states.contains(MaterialState.focused))
-                              //   return Colors.red;
-                              if (states.contains(MaterialState.hovered))
-                                return Color(0xff322153);
-                              // if (states.contains(MaterialState.pressed))
-                              //   return Colors.blue;
-                              return const Color(
-                                  0xff16D69C); // null throus error in flutter 2.2+.
-                            }),
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        'Ціна',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text('LOG IN'),
-                      // style: ElevatedButton.styleFrom(
-                      //   shape: StadiumBorder(),
-                      //   side: BorderSide(color: Colors.red, width: 2),
-                      // ),
-                      style: ButtonStyle(
-                        overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                  ),
+                  TextButton(
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.resolveWith<Color>(
                               (Set<MaterialState> states) {
-                            if (states.contains(MaterialState.hovered))
-                              return Color(0xff00F2A9); //<-- SEE HERE
-                            return null; // Defer to the widget's default.
-                          },
-                        ),
+                            // if (states.contains(MaterialState.focused))
+                            //   return Colors.red;
+                            if (states.contains(MaterialState.hovered)) {
+                              return const Color(0xff322153);
+                            }
+                            // if (states.contains(MaterialState.pressed))
+                            //   return Colors.blue;
+                            return const Color(
+                                0xff16D69C); // null throus error in flutter 2.2+.
+                          }),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      'Філософія',
+                      style: TextStyle(
+                          fontSize: 20,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  TextButton(
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.resolveWith<Color>(
+                              (Set<MaterialState> states) {
+                            // if (states.contains(MaterialState.focused))
+                            //   return Colors.red;
+                            if (states.contains(MaterialState.hovered)) {
+                              return const Color(0xff322153);
+                            }
+                            // if (states.contains(MaterialState.pressed))
+                            //   return Colors.blue;
+                            return const Color(
+                                0xff16D69C); // null throus error in flutter 2.2+.
+                          }),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      'Про нас',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    icon: Image.asset('assets/img/logo.png'),
+                    iconSize: 50,
+                    onPressed: () {},
+                  ),
+                  TextButton(
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.resolveWith<Color>(
+                              (Set<MaterialState> states) {
+                            // if (states.contains(MaterialState.focused))
+                            //   return Colors.red;
+                            if (states.contains(MaterialState.hovered)) {
+                              return const Color(0xff322153);
+                            }
+                            // if (states.contains(MaterialState.pressed))
+                            //   return Colors.blue;
+                            return const Color(
+                                0xff16D69C); // null throus error in flutter 2.2+.
+                          }),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      'Що я отримаю',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  TextButton(
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.resolveWith<Color>(
+                              (Set<MaterialState> states) {
+                            // if (states.contains(MaterialState.focused))
+                            //   return Colors.red;
+                            if (states.contains(MaterialState.hovered)) {
+                              return const Color(0xff322153);
+                            }
+                            // if (states.contains(MaterialState.pressed))
+                            //   return Colors.blue;
+                            return const Color(
+                                0xff16D69C); // null throus error in flutter 2.2+.
+                          }),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      'Ціна',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    // style: ElevatedButton.styleFrom(
+                    //   shape: StadiumBorder(),
+                    //   side: BorderSide(color: Colors.red, width: 2),
+                    // ),
+                    style: ButtonStyle(
+                      overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                            (Set<MaterialState> states) {
+                          if (states.contains(MaterialState.hovered)) {
+                            return const Color(0xff00F2A9);
+                          } //<-- SEE HERE
+                          return null; // Defer to the widget's default.
+                        },
+                      ),
+                    ),
+                    child: const Text('LOG IN'),
+                  ),
+                ],
               ),
             );
       }
@@ -175,8 +174,8 @@ class _HeaderItemState extends State<HeaderItem> {
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff00F2A9),
-                  shape: StadiumBorder(),
+                  backgroundColor: const Color(0xff00F2A9),
+                  shape: const StadiumBorder(),
                   // side: BorderSide(color: Color(0xff322153), width: 2),
                 ),
                 child: const Text(
@@ -193,8 +192,9 @@ class _HeaderItemState extends State<HeaderItem> {
                       (Set<MaterialState> states) {
                     // if (states.contains(MaterialState.focused))
                     //   return Colors.red;
-                    if (states.contains(MaterialState.hovered))
-                      return Color(0xff322153);
+                    if (states.contains(MaterialState.hovered)) {
+                      return const Color(0xff322153);
+                    }
                     // if (states.contains(MaterialState.pressed))
                     //   return Colors.blue;
                     return const Color(
@@ -213,8 +213,9 @@ class _HeaderItemState extends State<HeaderItem> {
                       (Set<MaterialState> states) {
                     // if (states.contains(MaterialState.focused))
                     //   return Colors.red;
-                    if (states.contains(MaterialState.hovered))
-                      return Color(0xff322153);
+                    if (states.contains(MaterialState.hovered)) {
+                      return const Color(0xff322153);
+                    }
                     // if (states.contains(MaterialState.pressed))
                     //   return Colors.blue;
                     return const Color(
@@ -238,8 +239,9 @@ class _HeaderItemState extends State<HeaderItem> {
                       (Set<MaterialState> states) {
                     // if (states.contains(MaterialState.focused))
                     //   return Colors.red;
-                    if (states.contains(MaterialState.hovered))
-                      return Color(0xff322153);
+                    if (states.contains(MaterialState.hovered)) {
+                      return const Color(0xff322153);
+                    }
                     // if (states.contains(MaterialState.pressed))
                     //   return Colors.blue;
                     return const Color(
@@ -258,8 +260,9 @@ class _HeaderItemState extends State<HeaderItem> {
                       (Set<MaterialState> states) {
                     // if (states.contains(MaterialState.focused))
                     //   return Colors.red;
-                    if (states.contains(MaterialState.hovered))
-                      return Color(0xff322153);
+                    if (states.contains(MaterialState.hovered)) {
+                      return const Color(0xff322153);
+                    }
                     // if (states.contains(MaterialState.pressed))
                     //   return Colors.blue;
                     return const Color(
@@ -274,7 +277,6 @@ class _HeaderItemState extends State<HeaderItem> {
               ),
               ElevatedButton(
                 onPressed: () {},
-                child: Text('LOG IN'),
                 // style: ElevatedButton.styleFrom(
                 //   shape: StadiumBorder(),
                 //   side: BorderSide(color: Colors.red, width: 2),
@@ -282,12 +284,14 @@ class _HeaderItemState extends State<HeaderItem> {
                 style: ButtonStyle(
                   overlayColor: MaterialStateProperty.resolveWith<Color?>(
                     (Set<MaterialState> states) {
-                      if (states.contains(MaterialState.hovered))
-                        return Color(0xff00F2A9); //<-- SEE HERE
+                      if (states.contains(MaterialState.hovered)) {
+                        return const Color(0xff00F2A9);
+                      } //<-- SEE HERE
                       return null; // Defer to the widget's default.
                     },
                   ),
                 ),
+                child: const Text('LOG IN'),
               ),
             ],
           ),
@@ -393,41 +397,6 @@ class _HeaderItemState extends State<HeaderItem> {
       }
 
       return const Text('null');
-      return Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      );
     });
   }
 }

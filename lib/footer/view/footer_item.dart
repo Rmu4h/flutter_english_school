@@ -7,7 +7,7 @@ class FooterItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // height: 200,
-      child: Text('footer'),
+      child: const Text('footer'),
     );
   }
 }

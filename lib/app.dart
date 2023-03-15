@@ -4,7 +4,7 @@ import 'package:flutter_english_school/header/view/header_item.dart';
 import 'package:flutter_english_school/offer/view/offer_item.dart';
 
 class App extends StatelessWidget {
-  App({Key? key}) : super(key: key);
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +16,18 @@ class App extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 // mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
+                children: const [
+                  SizedBox(
                           height:110,
                           child: HeaderItem()
                       ),
                   Expanded(
-                      child: Container(
-                        height: 6000,
+                      child: SizedBox(
+                        height: 7000,
                         child: OfferItem()
                       )
                   ),
-                  Container(
+                  SizedBox(
                         height: 120,
                         child: FooterItem()
                       )
