@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/video.dart';
@@ -13,7 +14,7 @@ class OfferItem extends StatefulWidget {
 
 class _OfferItemState extends State<OfferItem> {
   final ScrollController controller = ScrollController();
-  final List<bool> _isShowQuestions = [false,false,false,false,false];
+  final List<bool> _isShowQuestions = [false, false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class _OfferItemState extends State<OfferItem> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-                height: 900.0,
+                height: 990.0,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                     gradient: LinearGradient(
@@ -56,7 +57,7 @@ class _OfferItemState extends State<OfferItem> {
                         height: 20,
                       ),
                       Text(
-                        'Вільно англійською простіше ніж ти думаєш',
+                        'Вільно  говорити англійською простіше ніж ти думаєш',
                         style: TextStyle(
                           fontSize: 24,
                           color: Color(0xff16D69C),
@@ -86,9 +87,21 @@ class _OfferItemState extends State<OfferItem> {
                         ),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 60,
                       ),
+                      // Center(
+                      //   child: SizedBox(
+                      //     // height: 660,
+                      //       // width: 600,
+                      //       child: Expanded(
+                      //           child: YoutubeAppDemo()
+                      //       )
+                      //   ),
+                      // ),
                       Expanded(child: YoutubeAppDemo()),
+                      SizedBox(
+                        height: 60,
+                      ),
                     ],
                   ),
                 )),
@@ -100,54 +113,111 @@ class _OfferItemState extends State<OfferItem> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Our Teaching Philosophy',
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Color(0xff322153),
-                        fontWeight: FontWeight.bold,
+                    const Expanded(
+                      child: AutoSizeText(
+                        'Наша Філософія Навчання',
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: Color(0xff322153),
+                          fontWeight: FontWeight.bold,
+                          // decoration: TextDecoration.underline,
+                          // decorationThickness: 3,
+                        ),
+                        maxLines: 2,
                       ),
                     ),
-                    Column(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        RichText(
-                          text: const TextSpan(
-                            children: [
-                              WidgetSpan(
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 2.0),
-                                  child: Icon(Icons.add),
-                                ),
-                              ),
-                              TextSpan(text: 'Created with '),
-                              TextSpan(text: 'By Michael'),
-                            ],
+                    Expanded(
+                      child: Column(
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: SizedBox(
+                              width: 550,
+                              height: 50,
+                              child: ListTile(
+                                  leading: const Icon(Icons.add,
+                                      color: Colors.black),
+                                  title: Wrap(
+                                    children: const [
+                                      Text('Навчайтеся серед '),
+                                      Text('однодумців ',
+                                          style: TextStyle(
+                                            color: Color(0xff16D69C),
+                                            // fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                      Text('і від '),
+                                      Text('наставників-однодумців.',
+                                          style: TextStyle(
+                                            color: Color(0xff16D69C),
+                                            // fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                    ],
+                                  )),
+                            ),
                           ),
-                        ),
-                        RichText(
-                          text: const TextSpan(
-                            children: [
-                              WidgetSpan(
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 2.0),
-                                  child: Icon(Icons.add),
-                                ),
-                              ),
-                              TextSpan(text: 'Created with '),
-                              TextSpan(text: 'By Michael'),
-                            ],
+                          Expanded(
+                            child: SizedBox(
+                              width: 550,
+                              height: 50,
+                              child: ListTile(
+                                  leading: const Icon(Icons.add,
+                                      color: Colors.black),
+                                  title: Wrap(
+                                    children: const [
+                                      Text('Вивчайте англійську  '),
+                                      Text('через практику',
+                                          style: TextStyle(
+                                            color: Color(0xff16D69C),
+                                            // fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                      Text('а не через теорію.')
+                                    ],
+                                  )),
+                            ),
                           ),
-                        ),
-                      ],
+                          Expanded(
+                            child: SizedBox(
+                              width: 550,
+                              height: 50,
+                              child: ListTile(
+                                  leading: const Icon(Icons.add,
+                                      color: Colors.black),
+                                  title: Wrap(
+                                    children: const [
+                                      Text(
+                                          'Робимо так щоб наші учні говорили '),
+                                      Text(
+                                        'якомога більше',
+                                        style: TextStyle(
+                                          color: Color(0xff16D69C),
+                                          // fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  )),
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
               ),
             ),
+            const Center(
+                child: AutoSizeText(
+              'Відгуки',
+              style: TextStyle(
+                fontSize: 30,
+                color: Color(0xff00F2A9),
+                fontWeight: FontWeight.bold,
+              ),
+            )),
             SizedBox(
               height: 500,
               child: Padding(
@@ -195,6 +265,7 @@ class _OfferItemState extends State<OfferItem> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xff00F2A9),
                   shape: const StadiumBorder(),
+                  padding: const EdgeInsets.all(25),
                   // side: BorderSide(color: Color(0xff322153), width: 2),
                 ),
                 child: const Text(
@@ -238,41 +309,66 @@ class _OfferItemState extends State<OfferItem> {
                             color: Color(0xff00F2A9),
                             width: 3,
                           ),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(12)),
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
                         ),
                         child: SizedBox(
                           // width: 500,
                           height: 400,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text('Практика мовлення:'),
-                                  Text('Speaking  club дає вам можливість практикувати мовлення в безпечній та дружній атмосфері. '),
-                                  Text('Це допоможе покращити вашу вимову, граматику та лексику.'),
-                                ],
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30.0),
-                                child: Container(
-                                    height: 300,
-                                    alignment: Alignment.center,
-                                    // constraints: const BoxConstraints(
-                                    //   maxWidth: 300,
-                                    //   maxHeight: 100,
-                                    // ),
-                                    child: Image.asset(
-                                      'assets/img/persons.webp',
-                                      height: 300,
-                                      width: 300,
-                                    )
+                          child: Padding(
+                            padding: const EdgeInsets.all(28.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      AutoSizeText(
+                                        'Практика мовлення',
+                                        style: TextStyle(
+                                          fontSize: 30,
+                                          color: Color(0xff00F2A9),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        maxLines: 2,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      AutoSizeText(
+                                        'Speaking  club дає вам можливість практикувати мовлення в безпечній та дружній атмосфері. Це допоможе покращити вашу вимову, граматику та лексику.',
+                                        style: TextStyle(
+                                          fontSize: 22,
+                                          // color: Color(0xff322153),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        maxLines: 3,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Expanded(
+                                  flex: 1,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    child: Container(
+                                        height: 300,
+                                        alignment: Alignment.center,
+                                        // constraints: const BoxConstraints(
+                                        //   maxWidth: 300,
+                                        //   maxHeight: 100,
+                                        // ),
+                                        child: Image.asset(
+                                          'assets/img/persons.webp',
+                                          height: 300,
+                                          width: 300,
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -288,41 +384,66 @@ class _OfferItemState extends State<OfferItem> {
                             color: Color(0xff00F2A9),
                             width: 3,
                           ),
-                          borderRadius:
-                          BorderRadius.all(Radius.circular(12)),
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
                         ),
                         child: SizedBox(
                           // width: 500,
-                          height: 500,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text('Впевненість:'),
-                                  Text('Регулярна практика мовлення допоможе вам стати більш впевненим в мовленні'),
-                                  Text('Це дуже корисно як у професійній сфері, так і в особистому житті.'),
-                                ],
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30.0),
-                                child: Container(
-                                    height: 300,
-                                    alignment: Alignment.center,
-                                    // constraints: const BoxConstraints(
-                                    //   maxWidth: 300,
-                                    //   maxHeight: 100,
-                                    // ),
-                                    child: Image.asset(
-                                      'assets/img/persons.webp',
-                                      height: 300,
-                                      width: 300,
-                                    )
+                          height: 400,
+                          child: Padding(
+                            padding: const EdgeInsets.all(28.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      AutoSizeText(
+                                        'Впевненість',
+                                        style: TextStyle(
+                                          fontSize: 30,
+                                          color: Color(0xff00F2A9),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        maxLines: 3,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      AutoSizeText(
+                                        'Регулярна практика мовлення допоможе вам стати більш впевненим в мовленні. Це дуже корисно як у професійній сфері, так і в особистому житті.',
+                                        style: TextStyle(
+                                          fontSize: 22,
+                                          // color: Color(0xff322153),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        maxLines: 3,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Expanded(
+                                  flex: 1,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    child: Container(
+                                        height: 300,
+                                        alignment: Alignment.center,
+                                        // constraints: const BoxConstraints(
+                                        //   maxWidth: 300,
+                                        //   maxHeight: 100,
+                                        // ),
+                                        child: Image.asset(
+                                          'assets/img/persons.webp',
+                                          height: 300,
+                                          width: 300,
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -338,91 +459,65 @@ class _OfferItemState extends State<OfferItem> {
                             color: Color(0xff00F2A9),
                             width: 3,
                           ),
-                          borderRadius:
-                          BorderRadius.all(Radius.circular(12)),
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
                         ),
                         child: SizedBox(
                           // width: 500,
                           height: 500,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text('Нові знайомства:'),
-                                  Text('Speaking club - це також можливість зустрічатися з новими людьми.'),
-                                  Text('Які мають спільний інтерес до вивчення іноземних мов.'),
-                                ],
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30.0),
-                                child: Container(
-                                    height: 300,
-                                    alignment: Alignment.center,
-                                    // constraints: const BoxConstraints(
-                                    //   maxWidth: 300,
-                                    //   maxHeight: 100,
-                                    // ),
-                                    child: Image.asset(
-                                      'assets/img/persons.webp',
-                                      height: 300,
-                                      width: 300,
-                                    )
+                          child: Padding(
+                            padding: const EdgeInsets.all(28.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      AutoSizeText(
+                                        'Нові знайомства',
+                                        style: TextStyle(
+                                          fontSize: 30,
+                                          color: Color(0xff00F2A9),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      AutoSizeText(
+                                        'Speaking club - це також можливість зустрічатися з новими людьми. Які мають спільний інтерес до вивчення іноземних мов.',
+                                        style: TextStyle(
+                                          fontSize: 22,
+                                          // color: Color(0xff322153),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        maxLines: 3,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    Center(
-                      child: Card(
-                        elevation: 0,
-                        shape: const RoundedRectangleBorder(
-                          side: BorderSide(
-                            color: Color(0xff00F2A9),
-                            width: 3,
-
-                          ),
-                          borderRadius:BorderRadius.all(Radius.circular(12)),
-                        ),
-                        child: SizedBox(
-                          // width: 500,
-                          height: 500,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text('Корисні поради:'),
-                                  Text('Учасники Speaking club можуть ділитися порадами та прийомами.'),
-                                  Text('Ви також можете дізнатися про корисні ресурси та інструменти для вивчення мови.'),
-                                ],
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30.0),
-                                child: Container(
-                                    height: 300,
-                                    alignment: Alignment.center,
-                                    // constraints: const BoxConstraints(
-                                    //   maxWidth: 300,
-                                    //   maxHeight: 100,
-                                    // ),
-                                    child: Image.asset(
-                                      'assets/img/persons.webp',
-                                      height: 300,
-                                      width: 300,
-                                    )
+                                Expanded(
+                                  flex: 1,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    child: Container(
+                                        height: 300,
+                                        alignment: Alignment.center,
+                                        // constraints: const BoxConstraints(
+                                        //   maxWidth: 300,
+                                        //   maxHeight: 100,
+                                        // ),
+                                        child: Image.asset(
+                                          'assets/img/persons.webp',
+                                          height: 300,
+                                          width: 300,
+                                        )),
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -438,42 +533,139 @@ class _OfferItemState extends State<OfferItem> {
                             color: Color(0xff00F2A9),
                             width: 3,
                           ),
-                          borderRadius:
-                          BorderRadius.all(Radius.circular(12)),
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
                         ),
                         child: SizedBox(
                           // width: 500,
-                          height: 500,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text('Ігри: Вивчення мови це не лише рутина,а і цікавий та забавний процесс. '),
-                                  Text('Вивчення мови це не лише рутина,а і цікавий та забавний процесс. '),
-                                  Text('Більш ефективному засвоєнню матеріалу'),
-                                  Text('Роблять процес вивчення більш захоплюючим та ефективним.'),
-                                ],
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30.0),
-                                child: Container(
-                                  height: 300,
-                                  alignment: Alignment.center,
-                                  // constraints: const BoxConstraints(
-                                  //   maxWidth: 300,
-                                  //   maxHeight: 100,
-                                  // ),
-                                  child: Image.asset(
-                                    'assets/img/persons.webp',
-                                    height: 300,
-                                    width: 300,
-                                    )
+                          height: 400,
+                          child: Padding(
+                            padding: const EdgeInsets.all(28.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      AutoSizeText(
+                                        'Корисні поради',
+                                        style: TextStyle(
+                                          fontSize: 30,
+                                          color: Color(0xff00F2A9),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        maxLines: 2,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      AutoSizeText(
+                                        'Учасники Speaking club можуть ділитися порадами та прийомами. Ви також можете дізнатися про корисні ресурси та інструменти для вивчення мови.',
+                                        style: TextStyle(
+                                          fontSize: 22,
+                                          // color: Color(0xff322153),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        maxLines: 3,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Expanded(
+                                  flex: 1,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    child: Container(
+                                        height: 300,
+                                        alignment: Alignment.center,
+                                        // constraints: const BoxConstraints(
+                                        //   maxWidth: 300,
+                                        //   maxHeight: 100,
+                                        // ),
+                                        child: Image.asset(
+                                          'assets/img/persons.webp',
+                                          height: 300,
+                                          width: 300,
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 40,
+                    ),
+                    Center(
+                      child: Card(
+                        elevation: 0,
+                        shape: const RoundedRectangleBorder(
+                          side: BorderSide(
+                            color: Color(0xff00F2A9),
+                            width: 3,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                        ),
+                        child: SizedBox(
+                          // width: 500,
+                          height: 400,
+                          child: Padding(
+                            padding: const EdgeInsets.all(28.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      AutoSizeText(
+                                        'Розваги',
+                                        style: TextStyle(
+                                          fontSize: 30,
+                                          color: Color(0xff00F2A9),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        'Вивчення мови це не лише рутина,а і цікавий та забавний процесс.Вивчення мови це не лише рутина,а і цікавий та забавний процесс. Більш ефективному засвоєнню матеріалу. Роблять процес вивчення більш захоплюючим та ефективним.',
+                                        style: TextStyle(
+                                          fontSize: 22,
+                                          // color: Color(0xff322153),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        maxLines: 3,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    child: Container(
+                                        height: 300,
+                                        alignment: Alignment.center,
+                                        // constraints: const BoxConstraints(
+                                        //   maxWidth: 300,
+                                        //   maxHeight: 100,
+                                        // ),
+                                        child: Image.asset(
+                                          'assets/img/persons.webp',
+                                          height: 300,
+                                          width: 300,
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -484,119 +676,143 @@ class _OfferItemState extends State<OfferItem> {
             ),
             Container(
               color: const Color(0xff322153),
-              height: 500,
+              height: 550,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        SizedBox(height: 40,),
-                        Text(
-                          'Про нас',
-                          style: TextStyle(
-                            fontSize: 30,
-                            color: Color(0xff16D69C),
-                            fontWeight: FontWeight.bold,
+                    Expanded(
+                      flex: 2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        // crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          SizedBox(
+                            height: 40,
                           ),
-                        ),
-                        SizedBox(height: 40,),
-                        Text('Працюєм для тих, хто хоче швидко покращити свою англійську мову.',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
+                          Expanded(
+                            child: AutoSizeText(
+                              'Про нас',
+                              style: TextStyle(
+                                fontSize: 30,
+                                color: Color(0xff16D69C),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
-                        ),
-                        Text('Наша мета - допомогти нашим клієнтам стати впевненішими в спілкуванні',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text('розширити свій словниковий запас та покращити вимову.',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 20,),
-                        Text(
-                          'Пропонуємо різні формати - від онлайн зустрічей до живих зустрічей з носіями мови',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Групові та індивідуальні заняття, тематичні клуби та багато іншого. ',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Вибирайте той формат, який вам більше підходить та допоможе досягти результату.',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 20,),
-                        Text(
-                          'Ми професіонали з багаторічним досвідом роботи викладачів англійської мови ',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Допоможем вам покращити вашу мову, граматику',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Та розширити свій словниковий запас.',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          'Не витрачайте час на пошук ефективних методів вивчення англійської мови - ',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Приєднуйтесь до Speaking clubs вже сьогодні!',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                          // SizedBox(
+                          //   height: 40,
+                          // ),
+                          Expanded(
+                            child: AutoSizeText(
+                              'Працюєм для тих, хто хоче швидко покращити свою англійську мову. Наша мета - допомогти нашим клієнтам стати впевненішими в спілкуванні розширити свій словниковий запас та покращити вимову.',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )),
+                          // Expanded(child: AutoSizeText(
+                          //   'Наша мета - допомогти нашим клієнтам стати впевненішими в спілкуванні',
+                          //   style: TextStyle(
+                          //     fontSize: 18,
+                          //     color: Colors.white,
+                          //     fontWeight: FontWeight.bold,
+                          //   ),
+                          // ),),
+                          // Expanded(child: AutoSizeText(
+                          //   'розширити свій словниковий запас та покращити вимову.',
+                          //   style: TextStyle(
+                          //     fontSize: 18,
+                          //     color: Colors.white,
+                          //     fontWeight: FontWeight.bold,
+                          //   ),
+                          // ),),
+                          // SizedBox(
+                          //   height: 20,
+                          // ),
+                          Expanded(
+                            child: AutoSizeText(
+                            'Пропонуємо різні формати - від онлайн зустрічей до живих зустрічей з носіями мови. Групові та індивідуальні заняття, тематичні клуби та багато іншого. Вибирайте той формат, який вам більше підходить та допоможе досягти результату.',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),),
+                          // Expanded(child: AutoSizeText(
+                          //   'Групові та індивідуальні заняття, тематичні клуби та багато іншого. ',
+                          //   style: TextStyle(
+                          //     fontSize: 18,
+                          //     color: Colors.white,
+                          //     fontWeight: FontWeight.bold,
+                          //   ),
+                          // ),),
+                          // Expanded(
+                          //   child: AutoSizeText(
+                          //     'Вибирайте той формат, який вам більше підходить та допоможе досягти результату.',
+                          //     style: TextStyle(
+                          //       fontSize: 18,
+                          //       color: Colors.white,
+                          //       fontWeight: FontWeight.bold,
+                          //     ),
+                          //   ),
+                          // ),
+                          // SizedBox(
+                          //   height: 20,
+                          // ),
+                          Expanded(child: AutoSizeText(
+                            'Ми професіонали з багаторічним досвідом роботи викладачів англійської мови. Допоможем вам покращити вашу як розмовну мову так і граматику, та розширити свій словниковий запас. ',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),),
+                          // Expanded(child: AutoSizeText(
+                          //   'Допоможем вам покращити вашу як розмовну мову так і граматику',
+                          //   style: TextStyle(
+                          //     fontSize: 18,
+                          //     color: Colors.white,
+                          //     fontWeight: FontWeight.bold,
+                          //   ),
+                          // ),),
+                          // Expanded(child: AutoSizeText(
+                          //   'Та розширити свій словниковий запас.',
+                          //   style: TextStyle(
+                          //     fontSize: 18,
+                          //     color: Colors.white,
+                          //     fontWeight: FontWeight.bold,
+                          //   ),
+                          // ),),
+                          // SizedBox(
+                          //   height: 20,
+                          // ),
+                          Expanded(child: AutoSizeText(
+                            'Не витрачайте час на пошук ефективних методів вивчення англійської мови - Приєднуйтесь до Speaking clubs вже сьогодні!',
+                            style: TextStyle(
+                              fontSize: 18,
+                              // color: Colors.white,
+                              color: Color(0xff16D69C),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),),
+                          // Expanded(child: AutoSizeText(
+                          //   'Приєднуйтесь до Speaking clubs вже сьогодні!',
+                          //   style: TextStyle(
+                          //     fontSize: 18,
+                          //     color: Colors.white,
+                          //     fontWeight: FontWeight.bold,
+                          //   ),
+                          // ),),
+                        ],
+                      ),
                     ),
-                    ClipRRect(
+                    Expanded(
+                      flex: 1,
+                      child: ClipRRect(
                       borderRadius: BorderRadius.circular(30.0),
                       child: Container(
                           height: 500,
@@ -609,431 +825,1236 @@ class _OfferItemState extends State<OfferItem> {
                             'assets/img/conversation.png',
                             height: 500,
                             width: 400,
-                          )
-                      ),
-                    ),
+                          )),
+                    ),),
                   ],
                 ),
               ),
             ),
             SizedBox(
-              // color: const Color(0xff322153),
-              height: 655,
+              height: 600,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
-                child: Column(
+                child: Center(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Expanded(
+                        flex: 1,
+                        child: AutoSizeText(
+                          'Отримай Справжній Результат',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Color(0xff16D69C),
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 3,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Expanded(
+                        flex: 1,
+                        child: AutoSizeText(
+                          'Якщо ви справді докладаєте всіх зусиль але заговорити чи покращити свою розмовну мову не вийде',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Color(0xff322153),
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 4,
+                        ),
+                      ),
+                      const Expanded(
+                        flex: 1,
+                        child: AutoSizeText(
+                          'Тоді ми повернемо вам кошти. Ви можете скасувати абонемент в будь-який час',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Color(0xff322153),
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 3,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Expanded(
+                        flex: 1,
+                        child: AutoSizeText(
+                          'Вам непотрібно роками вивчати Англійську щоб гарно на ній говорити',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Color(0xff322153),
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 3,
+                        ),
+                      ),
+                      const Expanded(
+                        flex: 1,
+                        child: AutoSizeText(
+                          'Так вам буде спочатку незручно але результат того вартий',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Color(0xff322153),
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 3,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Expanded(
+                        flex: 1,
+                        child: AutoSizeText(
+                          'Це чудова можливість познайомитися зі схожими за інтересами людьми. ',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Color(0xff322153),
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 3,
+                        ),
+                      ),
+                      const Expanded(
+                        flex: 1,
+                        child: AutoSizeText(
+                          'Перестань втрачати час на безкінечні курси книги чи репетиторів. Почни говорити зараз!',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Color(0xff322153),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Expanded(
+                        flex: 5,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    flex: 2,
+                                    child: Image.asset(
+                                      'assets/img/telegram.png',
+                                      height: 150,
+                                      width: 100,
+                                    ),
+                                  ),
+                                  const Expanded(
+                                    flex: 1,
+                                    child: AutoSizeText(
+                                        'Ми створили постійно доступний портал в телеграмі. Де публікуєм новини/івенти і цікавинки клубу'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    flex: 2,
+                                    child: Image.asset(
+                                      'assets/img/profits.png',
+                                      height: 150,
+                                      width: 100,
+                                    ),
+                                  ),
+                                  const Expanded(
+                                    flex: 1,
+                                    child: AutoSizeText(
+                                        'Відкриємо нові кар\'єрні можливості для вас. В середньому, люди з хорошим рівнем англійської заробляють на 30% більше ніж інші'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    flex: 2,
+                                    child: Image.asset(
+                                      'assets/img/goal.png',
+                                      height: 150,
+                                      width: 100,
+                                    ),
+                                  ),
+                                  const Expanded(
+                                    flex: 1,
+                                    child: AutoSizeText(
+                                        'Наша програма спільноти надасть вам все що необхідно для ваших цілей.'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              color: const Color(0xff322153),
+              height: 500,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const SizedBox(height: 40,),
-                    const Text(
-                      'Питання що часто задають',
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Color(0xff16D69C),
-                        fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: Card(
+                        shape: const RoundedRectangleBorder(
+                          side: BorderSide(
+                            // border color
+                            color: Color(0xff16D69C),
+                            // border thickness
+                            width: 5,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                        ),
+                        shadowColor: Colors.white,
+                        color: const Color(0xff322153),
+                        child: SizedBox(
+                          // width: 340,
+                          height: 450,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              children: [
+                                const Expanded(
+                                  child: AutoSizeText(
+                                    'Дитяча карта',
+                                    style: TextStyle(
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ),
+                                    maxLines: 2,
+                                  ),
+                                ), //Text
+                                const Expanded(
+                                  child: AutoSizeText(
+                                    '(1 місяць)',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ),
+                                    maxLines: 2,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ), //SizedBox
+                                Expanded(
+                                  child: ListTile(
+                                    title: const AutoSizeText(
+                                      '800 грн',
+                                      style: TextStyle(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                      maxLines: 2,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      side: const BorderSide(
+                                          color: Color(0xff16D69C), width: 5),
+                                      borderRadius: BorderRadius.circular(18),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Divider(
+                                  color: Colors.white,
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Необмежені відвідування дитячих груп',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                      maxLines: 3,
+                                    ),
+                                  ),
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.cancel,
+                                        color: Colors.red, size: 32),
+                                    title: AutoSizeText(
+                                      'Легкі покрокові посібники',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                      maxLines: 3,
+                                    ),
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.cancel_outlined,
+                                        color: Colors.red, size: 32),
+                                    title: AutoSizeText(
+                                      'Індивідуальне менторство 24/7',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                      maxLines: 3,
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.cancel_outlined,
+                                        color: Colors.red, size: 32),
+                                    title: AutoSizeText(
+                                      'Чати, обговорення та допомога',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                      maxLines: 3,
+                                    ),
+                                  ),
+                                ) //SizedBox
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 20,),
-                    Card(
-                      child: ListTile(
-                        title: const Text('Які формати Speaking club пропонує ваша компанія?'),
-                        trailing: const Icon(Icons.arrow_drop_down_circle),
-                        onTap: () {
-                          setState(
-                                () {
-                              _isShowQuestions[0] = !_isShowQuestions[0];
-                            },
-                          );
-                        },
+                    // const SizedBox(
+                    //   height: 20,
+                    // ),
+                    Expanded(
+                      child: Card(
+                        shape: const RoundedRectangleBorder(
+                          side: BorderSide(
+                            // border color
+                            color: Color(0xff16D69C),
+                            // border thickness
+                            width: 5,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                        ),
+                        shadowColor: Colors.white,
+                        color: const Color(0xff322153),
+                        child: SizedBox(
+                          width: 340,
+                          height: 450,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              children: [
+                                const Expanded(
+                                  child: AutoSizeText(
+                                    'VIP',
+                                    style: TextStyle(
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ), //Textstyle
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: AutoSizeText(
+                                    '(1 місяць)',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ), //Textstyle
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ), //SizedBox
+                                Expanded(
+                                  child: ListTile(
+                                    title: const AutoSizeText(
+                                      '1400 грн',
+                                      style: TextStyle(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      side: const BorderSide(
+                                          color: Color(0xff16D69C), width: 5),
+                                      borderRadius: BorderRadius.circular(18),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Divider(
+                                  color: Colors.white,
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Необмежені відвідування',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Легкі покрокові посібники',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Індивідуальне менторство 24/7',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Чати, обговорення та допомога',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //SizedBox
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                    Visibility(
-                      visible: _isShowQuestions[0],
-                      child: const Text('від онлайн зустрічей до живих зустрічей з носіями мови')
-                    ),
-                    const SizedBox(height: 20,),
-                    Card(
-                      child: ListTile(
-                        title: const Text('Які вимоги до рівня англійської мови для участі в Speaking club?'),
-                        trailing: const Icon(Icons.arrow_drop_down_circle),
-                        onTap: () {
-                          setState(
-                                () {
-                              _isShowQuestions[1] = !_isShowQuestions[1];
-                            },
-                          );
-                        },
+                    // const SizedBox(
+                    //   height: 20,
+                    // ),
+                    Expanded(
+                      child: Card(
+                        shape: const RoundedRectangleBorder(
+                          side: BorderSide(
+                            // border color
+                            color: Color(0xff16D69C),
+                            // border thickness
+                            width: 5,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                        ),
+                        shadowColor: Colors.white,
+                        color: const Color(0xff322153),
+                        child: SizedBox(
+                          width: 340,
+                          height: 450,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              children: [
+                                const Expanded(
+                                  child: AutoSizeText(
+                                    'VIP на 3 місяці',
+                                    style: TextStyle(
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ), //Textstyle
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 30,
+                                ), //SizedBox
+                                Expanded(
+                                  child: ListTile(
+                                    title: const AutoSizeText(
+                                      '3600 грн',
+                                      style: TextStyle(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      side: const BorderSide(
+                                          color: Color(0xff16D69C), width: 5),
+                                      borderRadius: BorderRadius.circular(18),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Divider(
+                                  color: Colors.white,
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Необмежені відвідування',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Легкі покрокові посібники',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Індивідуальне менторство 24/7',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Чати, обговорення та допомога',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //SizedBox
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                    Visibility(
-                        visible: _isShowQuestions[1],
-                        child: const Text('Ми приймаємо учасників на всіх рівнях володіння англійською мовою - від початківців до продвинутих. Від наших учасників очікується бажання вивчати мову та брати активну участь у заняттях.')
-                    ),
-                    const SizedBox(height: 20,),
-                    Card(
-                      child: ListTile(
-                        title: const Text('Які вимоги до рівня англійської мови для участі в Speaking club?'),
-                        trailing: const Icon(Icons.arrow_drop_down_circle),
-                        onTap: () {
-                          setState(
-                                () {
-                              _isShowQuestions[2] = !_isShowQuestions[2];
-                            },
-                          );
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 20,),
-                    Visibility(
-                        visible: _isShowQuestions[2],
-                        child: const Text('Теми для обговорення на заняттях Speaking club можуть бути різними - від повсякденного спілкування до бізнес-тем. Ми стараємося підібрати теми, які будуть цікавими для наших учасників та допоможуть їм покращити рівень володіння англійською мовою')
-                    ),
-                    Card(
-                      child: ListTile(
-                        title: const Text('Чи можна взяти пробне заняття?'),
-                        trailing: const Icon(Icons.arrow_drop_down_circle),
-                        onTap: () {
-                          setState(
-                                () {
-                              _isShowQuestions[3] = !_isShowQuestions[3];
-                            },
-                          );
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 20,),
-                    Visibility(
-                      visible: _isShowQuestions[3],
-                      child: const Text('Так, ми пропонуємо пробне заняття, під час якого ви зможете оцінити наші методи навчання та визначити, чи підходить вам формат Speaking club.')),
-                    Card(
-                      child: ListTile(
-                        title: const Text('Які вікові обмеження для участі в Speaking club?'),
-                        trailing: const Icon(Icons.arrow_drop_down_circle),
-                        onTap: () {
-                          setState(
-                                () {
-                              _isShowQuestions[4] = !_isShowQuestions[4];
-                            },
-                          );
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 20,),
-                    Visibility(
-                        visible: _isShowQuestions[4],
-                        child: const Text('У нас немає вікових обмежень для участі в Speaking club. Ми раді бачити наших учасників будь-якого віку, які бажають вивчати англійську мову та розвиватися комунікативно?')),
+                    )
                   ],
                 ),
-              )
+              ),
             ),
-            SizedBox(
-              height: 600,
+            Container(
+              color: const Color(0xff322153),
+              height: 500,
               child: Padding(
-                padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
-                child: Center(
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 20,),
-                      const Text('Отримай Справжній Результат',
-                        style: TextStyle(
-                          fontSize: 24,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                        ),
-                      const SizedBox(height: 20,),
-                      const Text('Якщо ви справді докладаєте всіх зусиль але заговорити чи покращити свою розмовну мову не вийде',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text('Тоді ми повернемо вам кошти. Ви можете скасувати абонемент в будь-який час',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 20,),
-                      const Text('Вам непотрібно роками вивчати Англійську щоб гарно на ній говорити',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text('Так вам буде спочатку незручно але результат того вартий',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 20,),
-                      const Text('Це чудова можливість познайомитися зі схожими за інтересами людьми, ',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text('знайти нових друзів та отримати можливість для співпраці та розвитку в різних галузях.',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 20,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              Image.asset(
-                                'assets/img/telegram.png',
-                                height: 150,
-                                width: 100,
-                              ),
-                              const Text('Ми створили постійно доступний портал в телеграмі'),
-                              const Text('Де публікуєм новини/івенти і цікавинки клубу'),
-                            ],
+                padding: EdgeInsets.fromLTRB(width / 5, 0, width / 5, 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      flex: 1, //weight for the widget
+                      child: Card(
+                        shape: const RoundedRectangleBorder(
+                          side: BorderSide(
+                            // border color
+                            color: Color(0xff16D69C),
+                            // border thickness
+                            width: 5,
                           ),
-                          Column(
-                            children: [
-                              Image.asset(
-                                'assets/img/profits.png',
-                                height: 150,
-                                width: 100,
-                              ),
-                              const Text('Відкриємо нові кар\'єрні можливості для вас. '),
-                              const Text('В середньому, люди з хорошим рівнем англ '),
-                              const Text('заробляють на 30% більше ніж інші'),
-                            ],
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                        ),
+                        shadowColor: Colors.white,
+                        color: const Color(0xff322153),
+                        child: SizedBox(
+                          width: 340,
+                          height: 450,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              children: [
+                                const Expanded(
+                                  child: AutoSizeText(
+                                    'Студентська',
+                                    style: TextStyle(
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ), //Textstyle
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: AutoSizeText(
+                                    '(1 місяць)',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ), //Textstyle
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ), //SizedBox
+                                Expanded(
+                                  child: ListTile(
+                                    title: const AutoSizeText(
+                                      '600 грн',
+                                      style: TextStyle(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      side: const BorderSide(
+                                          color: Color(0xff16D69C), width: 5),
+                                      borderRadius: BorderRadius.circular(18),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Divider(
+                                  color: Colors.white,
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Необмежені відвідування',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Легкі покрокові посібники',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.cancel_outlined,
+                                        color: Colors.red, size: 32),
+                                    title: AutoSizeText(
+                                      'Індивідуальне менторство 24/7',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Чати, обговорення та допомога',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //SizedBox
+                              ],
+                            ),
                           ),
-                          Column(
-                            children: [
-                              Image.asset(
-                                'assets/img/goal.png',
-                                height: 150,
-                                width: 100,
-                              ),
-                              const Text('Наша програма спільноти надасть вам все,'),
-                              const Text('Що необхідно для ваших цілей.'),
-                            ],
-                          ),
-                        ],
+                        ),
                       ),
-                    ],
-                  ),
+                    ),
+                    Expanded(
+                      flex: 1, //weight for the widget
+                      child: Card(
+                        shape: const RoundedRectangleBorder(
+                          side: BorderSide(
+                            // border color
+                            color: Color(0xff16D69C),
+                            // border thickness
+                            width: 5,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                        ),
+                        shadowColor: Colors.white,
+                        color: const Color(0xff322153),
+                        child: SizedBox(
+                          width: 340,
+                          height: 450,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              children: [
+                                const Expanded(
+                                  child: AutoSizeText(
+                                    'Вихідна',
+                                    style: TextStyle(
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ), //Textstyle
+                                  ),
+                                ), //Text
+                                const Expanded(
+                                  child: AutoSizeText(
+                                    '(1 місяць)',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ), //Textstyle
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ), //SizedBox
+                                Expanded(
+                                  child: ListTile(
+                                    title: const AutoSizeText(
+                                      '800 грн',
+                                      style: TextStyle(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      side: const BorderSide(
+                                          color: Color(0xff16D69C), width: 5),
+                                      borderRadius: BorderRadius.circular(18),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Divider(
+                                  color: Colors.white,
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Відвідування тільки на вихідних',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Легкі покрокові посібники',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.cancel_outlined,
+                                        color: Colors.red, size: 32),
+                                    title: AutoSizeText(
+                                      'Індивідуальне менторство 24/7',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Чати, обговорення та допомога',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //SizedBox
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    // const SizedBox(
+                    //   height: 20,
+                    // ),
+                    // const SizedBox(
+                    //   height: 20,
+                    // ),
+                    Expanded(
+                      flex: 1, //weight for the widget
+                      child: Card(
+                        shape: const RoundedRectangleBorder(
+                          side: BorderSide(
+                            // border color
+                            color: Color(0xff16D69C),
+                            // border thickness
+                            width: 5,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                        ),
+                        shadowColor: Colors.white,
+                        color: const Color(0xff322153),
+                        child: SizedBox(
+                          width: 340,
+                          height: 450,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              children: [
+                                const Expanded(
+                                  child: AutoSizeText(
+                                    'Вихідна на 3 місяці',
+                                    style: TextStyle(
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ), //Textstyle
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 30,
+                                ), //SizedBox
+                                Expanded(
+                                  child: ListTile(
+                                    title: const AutoSizeText(
+                                      '2400 грн',
+                                      style: TextStyle(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      side: const BorderSide(
+                                          color: Color(0xff16D69C), width: 5),
+                                      borderRadius: BorderRadius.circular(18),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                const Divider(
+                                  color: Colors.white,
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Необмежені відвідування',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Легкі покрокові посібники',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.cancel_outlined,
+                                        color: Colors.red, size: 32),
+                                    title: AutoSizeText(
+                                      'Індивідуальне менторство 24/7',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //Text
+                                const SizedBox(
+                                  height: 10,
+                                ), //SizedBox
+                                const Expanded(
+                                  child: ListTile(
+                                    leading: Icon(Icons.done,
+                                        color: Color(0xff16D69C), size: 32),
+                                    title: AutoSizeText(
+                                      'Чати, обговорення та допомога',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ), //SizedBox
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),
-            SizedBox(
-              height: 600,
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
-                child: Center(
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 20,),
-                      const Text('Ціни',
-                        style: TextStyle(
-                          fontSize: 24,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
+            Expanded(
+              child: SizedBox(
+                  // color: const Color(0xff322153),
+                  height: 405,
+                  child: Padding(
+                    padding:
+                        EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 40,
                         ),
-                      ),
-                      const SizedBox(height: 20,),
-                      const Text('Якщо ви справді докладаєте всіх зусиль але заговорити чи покращити свою розмовну мову не вийде',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text('Тоді ми повернемо вам кошти. Ви можете скасувати абонемент в будь-який час',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 20,),
-                      const Text('Вам непотрібно роками вивчати Англійську щоб гарно на ній говорити',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text('Так вам буде спочатку незручно але результат того вартий',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 20,),
-                      const Text('Це чудова можливість познайомитися зі схожими за інтересами людьми, ',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text('знайти нових друзів та отримати можливість для співпраці та розвитку в різних галузях.',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 20,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              Image.asset(
-                                'assets/img/telegram.png',
-                                height: 150,
-                                width: 100,
-                              ),
-                              const Text('Ми створили постійно доступний портал в телеграмі'),
-                              const Text('Де публікуєм новини/івенти і цікавинки клубу'),
-                            ],
+                        const AutoSizeText(
+                          'Питання що часто задають',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Color(0xff16D69C),
+                            fontWeight: FontWeight.bold,
                           ),
-                          Column(
-                            children: [
-                              Image.asset(
-                                'assets/img/profits.png',
-                                height: 150,
-                                width: 100,
-                              ),
-                              const Text('Відкриємо нові кар\'єрні можливості для вас. '),
-                              const Text('В середньому, люди з хорошим рівнем англ '),
-                              const Text('заробляють на 30% більше ніж інші'),
-                            ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Card(
+                          child: ListTile(
+                            title: const Text(
+                                'Які формати Speaking club пропонує ваша компанія?'),
+                            trailing: const Icon(
+                              Icons.arrow_drop_down_circle,
+                              color: Color(0xff16D69C),
+                            ),
+                            onTap: () {
+                              setState(
+                                () {
+                                  _isShowQuestions[0] = !_isShowQuestions[0];
+                                },
+                              );
+                            },
                           ),
-                          Column(
-                            children: [
-                              Image.asset(
-                                'assets/img/goal.png',
-                                height: 150,
-                                width: 100,
-                              ),
-                              const Text('Наша програма спільноти надасть вам все,'),
-                              const Text('Що необхідно для ваших цілей.'),
-                            ],
+                        ),
+                        Visibility(
+                            visible: _isShowQuestions[0],
+                            child: const Text(
+                                'від онлайн зустрічей до живих зустрічей з носіями мови')),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Card(
+                          child: ListTile(
+                            title: const Text(
+                                'Які вимоги до рівня англійської мови для участі в Speaking club?'),
+                            trailing: const Icon(
+                              Icons.arrow_drop_down_circle,
+                              color: Color(0xff16D69C),
+                            ),
+                            onTap: () {
+                              setState(
+                                () {
+                                  _isShowQuestions[1] = !_isShowQuestions[1];
+                                },
+                              );
+                            },
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+                        ),
+                        Visibility(
+                            visible: _isShowQuestions[1],
+                            child: const Text(
+                                'Ми приймаємо учасників на всіх рівнях володіння англійською мовою - від початківців до продвинутих. Від наших учасників очікується бажання вивчати мову та брати активну участь у заняттях.')),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Card(
+                          child: ListTile(
+                            title: const Text(
+                                'Які вимоги до рівня англійської мови для участі в Speaking club?'),
+                            trailing: const Icon(
+                              Icons.arrow_drop_down_circle,
+                              color: Color(0xff16D69C),
+                            ),
+                            onTap: () {
+                              setState(
+                                () {
+                                  _isShowQuestions[2] = !_isShowQuestions[2];
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Visibility(
+                            visible: _isShowQuestions[2],
+                            child: const Text(
+                                'Теми для обговорення на заняттях Speaking club можуть бути різними - від повсякденного спілкування до бізнес-тем. Ми стараємося підібрати теми, які будуть цікавими для наших учасників та допоможуть їм покращити рівень володіння англійською мовою')),
+                        Card(
+                          child: ListTile(
+                            title: const Text('Чи можна взяти пробне заняття?'),
+                            trailing: const Icon(
+                              Icons.arrow_drop_down_circle,
+                              color: Color(0xff16D69C),
+                            ),
+                            onTap: () {
+                              setState(
+                                () {
+                                  _isShowQuestions[3] = !_isShowQuestions[3];
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Visibility(
+                            visible: _isShowQuestions[3],
+                            child: const Text(
+                                'Так, ми пропонуємо пробне заняття, під час якого ви зможете оцінити наші методи навчання та визначити, чи підходить вам формат Speaking club.')),
+                        Card(
+                          child: ListTile(
+                            title: const Text(
+                                'Які вікові обмеження для участі в Speaking club?'),
+                            trailing: const Icon(
+                              Icons.arrow_drop_down_circle,
+                              color: Color(0xff16D69C),
+                            ),
+                            onTap: () {
+                              setState(
+                                () {
+                                  _isShowQuestions[4] = !_isShowQuestions[4];
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Visibility(
+                            visible: _isShowQuestions[4],
+                            child: const Text(
+                                'У нас немає вікових обмежень для участі в Speaking club. Ми раді бачити наших учасників будь-якого віку, які бажають вивчати англійську мову та розвиватися комунікативно?')),
+                        Center(
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xff00F2A9),
+                              shape: const StadiumBorder(),
+                              padding: const EdgeInsets.all(25),
+                              // side: BorderSide(color: Color(0xff322153), width: 2),
+                            ),
+                            child: const Text(
+                              'ПРИЄДНАТИСЬ',
+                              style: TextStyle(
+                                color: Color(0xff322153),
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
             ),
-
-            // Expanded(
-            //     child: Text(
-            // //         'Практика мовлення: Speaking  club дає вам можливість практикувати мовлення в безпечній та дружній атмосфері. Це допоможе покращити вашу вимову, граматику та лексику.')),
-            // Expanded(
-            //     child: Text(
-            //         'Впевненість: Регулярна практика мовлення допоможе вам стати більш впевненим в мовленні, що може бути корисно як у професійній сфері, так і в особистому житті.')),
-            // Expanded(
-            //     child: Text(
-            //         'Нові знайомства: Speaking club - це також можливість зустрічатися з новими людьми, які мають спільний інтерес до вивчення іноземних мов.')),
-            // Expanded(
-            //     child: Text(
-            //         'Корисні поради: Учасники Speaking club можуть ділитися порадами та прийомами, які допомагають у навчанні мови. Ви також можете дізнатися про корисні ресурси та інструменти для вивчення мови.')),
-            // Expanded(
-            //     child: Text(
-            //         'Ігри: Вивчення мови це не лише рутина,а і цікавий та забавний процесс.Це сприяє більш ефективному засвоєнню матеріалу, оскільки ви будете більш зацікавлені у тому, що ви вивчаєте. Узагалі, ігри можуть бути корисним інструментом у вивченні мови, оскільки вони можуть зробити процес вивчення більш захоплюючим та ефективним.')),
-            // Expanded(child: Text('Що таке Lets talk: про нас інфа')),
-            // Expanded(child: Text('Приєднатись призив до дії')),
-            // Expanded(child: Text('Чого ми навчаємо? перелік')),
-            // Expanded(
-            //     child: Text(
-            //         'Отримай реальні результати. Далі потиваційна хуйня яка грає з емоціями людини та дає можливість повернути бабки якщо ви невідчуєте прогрессу')),
-            const Expanded(child: Text('Блок з цінами')),
-            const Expanded(
-                child:
-                    Text('Вєбати ще один блок з скрінами про гарні відгуки')),
-            const Expanded(
-                child: Text('Блок з популярними питаннями та відповідями')),
           ],
         );
       }
 
       //Tablet
-      if (constrains.maxWidth > 656 && constrains.maxWidth < 1400) {
-        return SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: constrains.maxHeight,
-            ),
-            child: IntrinsicHeight(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    // A fixed-height child.
-                    color: const Color(0xffeeee00), // Yellow
-                    height: 120.0,
-                    alignment: Alignment.center,
-                    child: const Text('Fixed Height Content'),
-                  ),
-                  Container(
-                    // A fixed-height child.
-                    color: const Color(0xffeeee00), // Yellow
-                    height: 120.0,
-                    alignment: Alignment.center,
-                    child: const Text('Fixed Height Content'),
-                  ),
-                  Container(
-                    // A fixed-height child.
-                    color: const Color(0xffeeee00), // Yellow
-                    height: 120.0,
-                    alignment: Alignment.center,
-                    child: const Text('Fixed Height Content'),
-                  ),
-                  Expanded(
-                    // A flexible child that will grow to fit the viewport but
-                    // still be at least as big as necessary to fit its contents.
-                    child: Container(
-                      color: const Color(0xffee0000), // Red
-                      height: 120.0,
-                      alignment: Alignment.center,
-                      child: const Text('Flexible Content'),
-                    ),
-                  ),
-                  Expanded(
-                    // A flexible child that will grow to fit the viewport but
-                    // still be at least as big as necessary to fit its contents.
-                    child: Container(
-                      color: const Color(0xffee0000), // Red
-                      height: 120.0,
-                      alignment: Alignment.center,
-                      child: const Text('Flexible Content'),
-                    ),
-                  ),
-                  Expanded(
-                    // A flexible child that will grow to fit the viewport but
-                    // still be at least as big as necessary to fit its contents.
-                    child: Container(
-                      color: const Color(0xffee0000), // Red
-                      height: 120.0,
-                      alignment: Alignment.center,
-                      child: const Text('Flexible Content'),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
-      }
+      // if (constrains.maxWidth > 656 && constrains.maxWidth < 1400) {
+      //   return SingleChildScrollView(
+      //     child: ConstrainedBox(
+      //       constraints: BoxConstraints(
+      //         minHeight: constrains.maxHeight,
+      //       ),
+      //       child: IntrinsicHeight(
+      //         child: Column(
+      //           children: <Widget>[
+      //             Container(
+      //               // A fixed-height child.
+      //               color: const Color(0xffeeee00), // Yellow
+      //               height: 120.0,
+      //               alignment: Alignment.center,
+      //               child: const Text('Fixed Height Content'),
+      //             ),
+      //             Container(
+      //               // A fixed-height child.
+      //               color: const Color(0xffeeee00), // Yellow
+      //               height: 120.0,
+      //               alignment: Alignment.center,
+      //               child: const Text('Fixed Height Content'),
+      //             ),
+      //             Container(
+      //               // A fixed-height child.
+      //               color: const Color(0xffeeee00), // Yellow
+      //               height: 120.0,
+      //               alignment: Alignment.center,
+      //               child: const Text('Fixed Height Content'),
+      //             ),
+      //             Expanded(
+      //               // A flexible child that will grow to fit the viewport but
+      //               // still be at least as big as necessary to fit its contents.
+      //               child: Container(
+      //                 color: const Color(0xffee0000), // Red
+      //                 height: 120.0,
+      //                 alignment: Alignment.center,
+      //                 child: const Text('Flexible Content'),
+      //               ),
+      //             ),
+      //             Expanded(
+      //               // A flexible child that will grow to fit the viewport but
+      //               // still be at least as big as necessary to fit its contents.
+      //               child: Container(
+      //                 color: const Color(0xffee0000), // Red
+      //                 height: 120.0,
+      //                 alignment: Alignment.center,
+      //                 child: const Text('Flexible Content'),
+      //               ),
+      //             ),
+      //             Expanded(
+      //               // A flexible child that will grow to fit the viewport but
+      //               // still be at least as big as necessary to fit its contents.
+      //               child: Container(
+      //                 color: const Color(0xffee0000), // Red
+      //                 height: 120.0,
+      //                 alignment: Alignment.center,
+      //                 child: const Text('Flexible Content'),
+      //               ),
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //     ),
+      //   );
+      // }
 
       //mobile screen
       if (constrains.maxWidth < 657) {

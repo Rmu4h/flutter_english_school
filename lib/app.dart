@@ -8,36 +8,23 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints viewportConstraints) {
-          return SingleChildScrollView(
-            child: IntrinsicHeight(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                // mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
-                  SizedBox(
-                          height:110,
-                          child: HeaderItem()
-                      ),
-                  Expanded(
-                      child: SizedBox(
-                        height: 7000,
-                        child: OfferItem()
-                      )
-                  ),
-                  SizedBox(
-                        height: 120,
-                        child: FooterItem()
-                      )
-                  // )
-                ],
-              ),
+    return Scaffold(body: LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints viewportConstraints) {
+        return SingleChildScrollView(
+          child: IntrinsicHeight(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                SizedBox(height: 110, child: HeaderItem()),
+                Expanded(child: SizedBox(height: 7250, child: OfferItem())),
+                SizedBox(height: 300, child: FooterItem()),
+                // )
+              ],
             ),
-          );
-        },
-      )
-    );
+          ),
+        );
+      },
+    ));
   }
 }

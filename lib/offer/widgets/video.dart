@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-
 ///
 class YoutubeAppDemo extends StatefulWidget {
   const YoutubeAppDemo({super.key});
@@ -27,11 +26,10 @@ class _YoutubeAppDemoState extends State<YoutubeAppDemo> {
     );
 
     _controller.setFullScreenListener(
-          (isFullScreen) {
+      (isFullScreen) {
         log('${isFullScreen ? 'Entered' : 'Exited'} Fullscreen.');
       },
     );
-
   }
 
   @override
@@ -44,16 +42,16 @@ class _YoutubeAppDemoState extends State<YoutubeAppDemo> {
             builder: (context, constraints) {
               if (kIsWeb && constraints.maxWidth > 750) {
                 return Column(
-                        children: [
-                          player,
-                          const Expanded(child: VideoPositionIndicator()),
-                        ],
-                      );
+                  children: [
+                    player,
+                    const Expanded(child: VideoPositionIndicator()),
+                  ],
+                );
               }
 
-              return ListView(
+              return Column(
                 children: [
-                  player,
+                player,
                   const VideoPositionIndicator(),
                   // const Controls(),
                 ],
