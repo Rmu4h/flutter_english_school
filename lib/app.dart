@@ -8,17 +8,21 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: LayoutBuilder(
+    double height = MediaQuery.of(context).size.height;
+    return Scaffold(
+        // backgroundColor: Colors.yellowAccent,
+        body: LayoutBuilder(
       builder: (BuildContext context, BoxConstraints viewportConstraints) {
         return SingleChildScrollView(
           child: IntrinsicHeight(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               // mainAxisAlignment: MainAxisAlignment.start,
-              children: const [
-                SizedBox(height: 110, child: HeaderItem()),
-                Expanded(child: SizedBox(height: 7250, child: OfferItem())),
-                SizedBox(height: 300, child: FooterItem()),
+              children: [
+                Container( height: height, child: const HeaderItem()),
+                const Expanded(
+                    child: SizedBox(height: 7100, child: OfferItem())),
+                const SizedBox(height: 300, child: FooterItem()),
                 // )
               ],
             ),

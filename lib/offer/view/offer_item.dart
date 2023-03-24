@@ -20,93 +20,94 @@ class _OfferItemState extends State<OfferItem> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constrains) {
-      //desktop
+      // desk screen
       if (constrains.maxWidth >= 1200) {
         double width = MediaQuery.of(context).size.width;
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            // Container(
+            //     height: 990.0,
+            //     width: double.infinity,
+            //     decoration: const BoxDecoration(
+            //         gradient: LinearGradient(
+            //       begin: Alignment.topCenter,
+            //       end: Alignment.bottomRight,
+            //       stops: [
+            //         0.4,
+            //         0.6,
+            //         0.7,
+            //         0.8,
+            //       ],
+            //       colors: [
+            //         Colors.white,
+            //         Color(0xffE5FEF6),
+            //         Color(0xffC3FCEA),
+            //         Color(0xff88F9D6),
+            //       ],
+            //     )),
+            //     child: Padding(
+            //       padding:
+            //           EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
+            //       child: Column(
+            //         crossAxisAlignment: CrossAxisAlignment.start,
+            //         children: const [
+            //           SizedBox(
+            //             height: 20,
+            //           ),
+            //           Text(
+            //             'Вільно  говорити англійською простіше ніж ти думаєш',
+            //             style: TextStyle(
+            //               fontSize: 24,
+            //               color: Color(0xff16D69C),
+            //               fontWeight: FontWeight.bold,
+            //             ),
+            //           ),
+            //           SizedBox(
+            //             height: 20,
+            //           ),
+            //           Text(
+            //             'Розкрийте свій ораторський потенціал з розмовним клубом Lets Talk',
+            //             style: TextStyle(
+            //               fontSize: 30,
+            //               color: Color(0xff322153),
+            //               fontWeight: FontWeight.bold,
+            //             ),
+            //           ),
+            //           SizedBox(
+            //             height: 20,
+            //           ),
+            //           Text(
+            //             'Тут ми обговорюємо цікаві теми, спілкуємося, сміємося та навчаємося легко та невимушено. Ми зустрічаємось у бібліотеці та насолоджуємось чаєм чи кавою. Друзі ласкаво просимо!',
+            //             style: TextStyle(
+            //               fontSize: 20,
+            //               color: Color(0xff322153),
+            //               fontWeight: FontWeight.bold,
+            //             ),
+            //           ),
+            //           SizedBox(
+            //             height: 60,
+            //           ),
+            //           // Center(
+            //           //   child: SizedBox(
+            //           //     // height: 660,
+            //           //       // width: 600,
+            //           //       child: Expanded(
+            //           //           child: YoutubeAppDemo()
+            //           //       )
+            //           //   ),
+            //           // ),
+            //           Expanded(child: YoutubeAppDemo()),
+            //           SizedBox(
+            //             height: 60,
+            //           ),
+            //         ],
+            //       ),
+            //     )),
             Container(
-                height: 990.0,
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomRight,
-                  stops: [
-                    0.4,
-                    0.6,
-                    0.7,
-                    0.8,
-                  ],
-                  colors: [
-                    Colors.white,
-                    Color(0xffE5FEF6),
-                    Color(0xffC3FCEA),
-                    Color(0xff88F9D6),
-                  ],
-                )),
-                child: Padding(
-                  padding:
-                      EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        'Вільно  говорити англійською простіше ніж ти думаєш',
-                        style: TextStyle(
-                          fontSize: 24,
-                          color: Color(0xff16D69C),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        'Розкрийте свій ораторський потенціал з розмовним клубом Lets Talk',
-                        style: TextStyle(
-                          fontSize: 30,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        'Тут ми обговорюємо цікаві теми, спілкуємося, сміємося та навчаємося легко та невимушено. Ми зустрічаємось у бібліотеці та насолоджуємось чаєм чи кавою. Друзі ласкаво просимо!',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Color(0xff322153),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 60,
-                      ),
-                      // Center(
-                      //   child: SizedBox(
-                      //     // height: 660,
-                      //       // width: 600,
-                      //       child: Expanded(
-                      //           child: YoutubeAppDemo()
-                      //       )
-                      //   ),
-                      // ),
-                      Expanded(child: YoutubeAppDemo()),
-                      SizedBox(
-                        height: 60,
-                      ),
-                    ],
-                  ),
-                )),
-            SizedBox(
-              height: 200,
+              color: const Color(0xff322153),
+              height: 320,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
                 child: Row(
@@ -118,7 +119,7 @@ class _OfferItemState extends State<OfferItem> {
                         'Наша Філософія Навчання',
                         style: TextStyle(
                           fontSize: 30,
-                          color: Color(0xff322153),
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                           // decoration: TextDecoration.underline,
                           // decorationThickness: 3,
@@ -128,75 +129,126 @@ class _OfferItemState extends State<OfferItem> {
                     ),
                     Expanded(
                       child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
                             child: SizedBox(
-                              width: 550,
-                              height: 50,
+                              // width: 550,
+                              // height: 50,
                               child: ListTile(
-                                  leading: const Icon(Icons.add,
-                                      color: Colors.black),
+                                  leading: const Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                    size: 30,
+                                  ),
                                   title: Wrap(
                                     children: const [
-                                      Text('Навчайтеся серед '),
-                                      Text('однодумців ',
+                                      AutoSizeText(
+                                        'Навчайтеся серед ',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                        ),
+                                        maxLines: 2,
+                                      ),
+                                      AutoSizeText('однодумців ',
                                           style: TextStyle(
                                             color: Color(0xff16D69C),
-                                            // fontSize: 20,
+                                            fontSize: 22,
                                             fontWeight: FontWeight.bold,
-                                          )),
-                                      Text('і від '),
-                                      Text('наставників-однодумців.',
+                                          ),
+                                        maxLines: 2,
+                                      ),
+                                      AutoSizeText(
+                                        'і від ',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                        ),
+                                        maxLines: 2,
+                                      ),
+                                      AutoSizeText('наставників-однодумців.',
                                           style: TextStyle(
                                             color: Color(0xff16D69C),
-                                            // fontSize: 20,
+                                            fontSize: 22,
                                             fontWeight: FontWeight.bold,
-                                          )),
+                                          ),
+                                        maxLines: 2,
+                                      ),
                                     ],
                                   )),
                             ),
                           ),
                           Expanded(
                             child: SizedBox(
-                              width: 550,
-                              height: 50,
+                              // width: 550,
+                              // height: 50,
                               child: ListTile(
-                                  leading: const Icon(Icons.add,
-                                      color: Colors.black),
+                                  leading: const Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                    size: 30,
+                                  ),
                                   title: Wrap(
                                     children: const [
-                                      Text('Вивчайте англійську  '),
-                                      Text('через практику',
+                                      AutoSizeText(
+                                        'Вивчайте англійську  ',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                        ),
+                                        maxLines: 2,
+                                      ),
+                                      AutoSizeText('через практику',
                                           style: TextStyle(
                                             color: Color(0xff16D69C),
-                                            // fontSize: 20,
+                                            fontSize: 22,
                                             fontWeight: FontWeight.bold,
-                                          )),
-                                      Text('а не через теорію.')
+                                          ),
+                                        maxLines: 2,
+                                      ),
+                                      AutoSizeText(
+                                        'а не через теорію.',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                        ),
+                                        maxLines: 2,
+                                      )
                                     ],
                                   )),
                             ),
                           ),
                           Expanded(
                             child: SizedBox(
-                              width: 550,
-                              height: 50,
+                              // width: 550,
+                              // height: 50,
                               child: ListTile(
-                                  leading: const Icon(Icons.add,
-                                      color: Colors.black),
+                                  leading: const Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                    size: 30,
+                                  ),
                                   title: Wrap(
                                     children: const [
-                                      Text(
-                                          'Робимо так щоб наші учні говорили '),
-                                      Text(
+                                      AutoSizeText(
+                                        'Робимо так щоб наші учні говорили ',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                        ),
+                                        maxLines: 2,
+                                      ),
+                                      AutoSizeText(
                                         'якомога більше',
                                         style: TextStyle(
                                           color: Color(0xff16D69C),
                                           // fontSize: 20,
                                           fontWeight: FontWeight.bold,
+                                          fontSize: 22,
                                         ),
+                                        maxLines: 2,
                                       ),
                                     ],
                                   )),
@@ -208,6 +260,9 @@ class _OfferItemState extends State<OfferItem> {
                   ],
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             const Center(
                 child: AutoSizeText(
@@ -282,7 +337,7 @@ class _OfferItemState extends State<OfferItem> {
               height: 30,
             ),
             SizedBox(
-              height: 2600,
+              height: 2300,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
                 child: Column(
@@ -545,6 +600,7 @@ class _OfferItemState extends State<OfferItem> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Expanded(
+                                  flex: 2,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: const [
@@ -706,8 +762,8 @@ class _OfferItemState extends State<OfferItem> {
                           //   height: 40,
                           // ),
                           Expanded(
-                            child: AutoSizeText(
-                              'Працюєм для тих, хто хоче швидко покращити свою англійську мову. Наша мета - допомогти нашим клієнтам стати впевненішими в спілкуванні розширити свій словниковий запас та покращити вимову.',
+                              child: AutoSizeText(
+                            'Працюєм для тих, хто хоче швидко покращити свою англійську мову. Наша мета - допомогти нашим клієнтам стати впевненішими в спілкуванні розширити свій словниковий запас та покращити вимову.',
                             style: TextStyle(
                               fontSize: 18,
                               color: Colors.white,
@@ -735,13 +791,14 @@ class _OfferItemState extends State<OfferItem> {
                           // ),
                           Expanded(
                             child: AutoSizeText(
-                            'Пропонуємо різні формати - від онлайн зустрічей до живих зустрічей з носіями мови. Групові та індивідуальні заняття, тематичні клуби та багато іншого. Вибирайте той формат, який вам більше підходить та допоможе досягти результату.',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                              'Пропонуємо різні формати - від онлайн зустрічей до живих зустрічей з носіями мови. Групові та індивідуальні заняття, тематичні клуби та багато іншого. Вибирайте той формат, який вам більше підходить та допоможе досягти результату.',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),),
+                          ),
                           // Expanded(child: AutoSizeText(
                           //   'Групові та індивідуальні заняття, тематичні клуби та багато іншого. ',
                           //   style: TextStyle(
@@ -763,14 +820,16 @@ class _OfferItemState extends State<OfferItem> {
                           // SizedBox(
                           //   height: 20,
                           // ),
-                          Expanded(child: AutoSizeText(
-                            'Ми професіонали з багаторічним досвідом роботи викладачів англійської мови. Допоможем вам покращити вашу як розмовну мову так і граматику, та розширити свій словниковий запас. ',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                          Expanded(
+                            child: AutoSizeText(
+                              'Ми професіонали з багаторічним досвідом роботи викладачів англійської мови. Допоможем вам покращити вашу як розмовну мову так і граматику, та розширити свій словниковий запас. ',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),),
+                          ),
                           // Expanded(child: AutoSizeText(
                           //   'Допоможем вам покращити вашу як розмовну мову так і граматику',
                           //   style: TextStyle(
@@ -790,15 +849,17 @@ class _OfferItemState extends State<OfferItem> {
                           // SizedBox(
                           //   height: 20,
                           // ),
-                          Expanded(child: AutoSizeText(
-                            'Не витрачайте час на пошук ефективних методів вивчення англійської мови - Приєднуйтесь до Speaking clubs вже сьогодні!',
-                            style: TextStyle(
-                              fontSize: 18,
-                              // color: Colors.white,
-                              color: Color(0xff16D69C),
-                              fontWeight: FontWeight.bold,
+                          Expanded(
+                            child: AutoSizeText(
+                              'Не витрачайте час на пошук ефективних методів вивчення англійської мови - Приєднуйтесь до Speaking clubs вже сьогодні!',
+                              style: TextStyle(
+                                fontSize: 18,
+                                // color: Colors.white,
+                                color: Color(0xff16D69C),
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),),
+                          ),
                           // Expanded(child: AutoSizeText(
                           //   'Приєднуйтесь до Speaking clubs вже сьогодні!',
                           //   style: TextStyle(
@@ -813,20 +874,21 @@ class _OfferItemState extends State<OfferItem> {
                     Expanded(
                       flex: 1,
                       child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30.0),
-                      child: Container(
-                          height: 500,
-                          alignment: Alignment.center,
-                          // constraints: const BoxConstraints(
-                          //   maxWidth: 300,
-                          //   maxHeight: 100,
-                          // ),
-                          child: Image.asset(
-                            'assets/img/conversation.png',
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Container(
                             height: 500,
-                            width: 400,
-                          )),
-                    ),),
+                            alignment: Alignment.center,
+                            // constraints: const BoxConstraints(
+                            //   maxWidth: 300,
+                            //   maxHeight: 100,
+                            // ),
+                            child: Image.asset(
+                              'assets/img/conversation.png',
+                              height: 500,
+                              width: 400,
+                            )),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -1016,6 +1078,7 @@ class _OfferItemState extends State<OfferItem> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
+                      flex: 4,
                       child: Card(
                         shape: const RoundedRectangleBorder(
                           side: BorderSide(
@@ -1045,7 +1108,7 @@ class _OfferItemState extends State<OfferItem> {
                                     ),
                                     maxLines: 2,
                                   ),
-                                ), //Text
+                                ),
                                 const Expanded(
                                   child: AutoSizeText(
                                     '(1 місяць)',
@@ -1156,7 +1219,9 @@ class _OfferItemState extends State<OfferItem> {
                     // const SizedBox(
                     //   height: 20,
                     // ),
+                    const Expanded(child: SizedBox()),
                     Expanded(
+                      flex: 4,
                       child: Card(
                         shape: const RoundedRectangleBorder(
                           side: BorderSide(
@@ -1290,7 +1355,9 @@ class _OfferItemState extends State<OfferItem> {
                     // const SizedBox(
                     //   height: 20,
                     // ),
+                    const Expanded(child: SizedBox()),
                     Expanded(
+                      flex: 4,
                       child: Card(
                         shape: const RoundedRectangleBorder(
                           side: BorderSide(
@@ -1424,7 +1491,7 @@ class _OfferItemState extends State<OfferItem> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
-                      flex: 1, //weight for the widget
+                      flex: 4, //weight for the widget
                       child: Card(
                         shape: const RoundedRectangleBorder(
                           side: BorderSide(
@@ -1555,8 +1622,9 @@ class _OfferItemState extends State<OfferItem> {
                         ),
                       ),
                     ),
+                    const Expanded(child: SizedBox()),
                     Expanded(
-                      flex: 1, //weight for the widget
+                      flex: 4, //weight for the widget
                       child: Card(
                         shape: const RoundedRectangleBorder(
                           side: BorderSide(
@@ -1693,8 +1761,9 @@ class _OfferItemState extends State<OfferItem> {
                     // const SizedBox(
                     //   height: 20,
                     // ),
+                    const Expanded(child: SizedBox()),
                     Expanded(
-                      flex: 1, //weight for the widget
+                      flex: 4, //weight for the widget
                       child: Card(
                         shape: const RoundedRectangleBorder(
                           side: BorderSide(
@@ -1822,7 +1891,7 @@ class _OfferItemState extends State<OfferItem> {
             Expanded(
               child: SizedBox(
                   // color: const Color(0xff322153),
-                  height: 405,
+                  height: 315,
                   child: Padding(
                     padding:
                         EdgeInsets.fromLTRB(width / 5, 25.0, width / 5, 25.0),
@@ -1988,75 +2057,75 @@ class _OfferItemState extends State<OfferItem> {
         );
       }
 
-      //Tablet
-      // if (constrains.maxWidth > 656 && constrains.maxWidth < 1400) {
-      //   return SingleChildScrollView(
-      //     child: ConstrainedBox(
-      //       constraints: BoxConstraints(
-      //         minHeight: constrains.maxHeight,
-      //       ),
-      //       child: IntrinsicHeight(
-      //         child: Column(
-      //           children: <Widget>[
-      //             Container(
-      //               // A fixed-height child.
-      //               color: const Color(0xffeeee00), // Yellow
-      //               height: 120.0,
-      //               alignment: Alignment.center,
-      //               child: const Text('Fixed Height Content'),
-      //             ),
-      //             Container(
-      //               // A fixed-height child.
-      //               color: const Color(0xffeeee00), // Yellow
-      //               height: 120.0,
-      //               alignment: Alignment.center,
-      //               child: const Text('Fixed Height Content'),
-      //             ),
-      //             Container(
-      //               // A fixed-height child.
-      //               color: const Color(0xffeeee00), // Yellow
-      //               height: 120.0,
-      //               alignment: Alignment.center,
-      //               child: const Text('Fixed Height Content'),
-      //             ),
-      //             Expanded(
-      //               // A flexible child that will grow to fit the viewport but
-      //               // still be at least as big as necessary to fit its contents.
-      //               child: Container(
-      //                 color: const Color(0xffee0000), // Red
-      //                 height: 120.0,
-      //                 alignment: Alignment.center,
-      //                 child: const Text('Flexible Content'),
-      //               ),
-      //             ),
-      //             Expanded(
-      //               // A flexible child that will grow to fit the viewport but
-      //               // still be at least as big as necessary to fit its contents.
-      //               child: Container(
-      //                 color: const Color(0xffee0000), // Red
-      //                 height: 120.0,
-      //                 alignment: Alignment.center,
-      //                 child: const Text('Flexible Content'),
-      //               ),
-      //             ),
-      //             Expanded(
-      //               // A flexible child that will grow to fit the viewport but
-      //               // still be at least as big as necessary to fit its contents.
-      //               child: Container(
-      //                 color: const Color(0xffee0000), // Red
-      //                 height: 120.0,
-      //                 alignment: Alignment.center,
-      //                 child: const Text('Flexible Content'),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //     ),
-      //   );
-      // }
+      // tablet screen
+      if (constrains.maxWidth > 656 && constrains.maxWidth < 1400) {
+        return SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: constrains.maxHeight,
+            ),
+            child: IntrinsicHeight(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    // A fixed-height child.
+                    color: const Color(0xffeeee00), // Yellow
+                    height: 120.0,
+                    alignment: Alignment.center,
+                    child: const Text('Fixed Height Content'),
+                  ),
+                  Container(
+                    // A fixed-height child.
+                    color: const Color(0xffeeee00), // Yellow
+                    height: 120.0,
+                    alignment: Alignment.center,
+                    child: const Text('Fixed Height Content'),
+                  ),
+                  Container(
+                    // A fixed-height child.
+                    color: const Color(0xffeeee00), // Yellow
+                    height: 120.0,
+                    alignment: Alignment.center,
+                    child: const Text('Fixed Height Content'),
+                  ),
+                  Expanded(
+                    // A flexible child that will grow to fit the viewport but
+                    // still be at least as big as necessary to fit its contents.
+                    child: Container(
+                      color: const Color(0xffee0000), // Red
+                      height: 120.0,
+                      alignment: Alignment.center,
+                      child: const Text('Flexible Content'),
+                    ),
+                  ),
+                  Expanded(
+                    // A flexible child that will grow to fit the viewport but
+                    // still be at least as big as necessary to fit its contents.
+                    child: Container(
+                      color: const Color(0xffee0000), // Red
+                      height: 120.0,
+                      alignment: Alignment.center,
+                      child: const Text('Flexible Content'),
+                    ),
+                  ),
+                  Expanded(
+                    // A flexible child that will grow to fit the viewport but
+                    // still be at least as big as necessary to fit its contents.
+                    child: Container(
+                      color: const Color(0xffee0000), // Red
+                      height: 120.0,
+                      alignment: Alignment.center,
+                      child: const Text('Flexible Content'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      }
 
-      //mobile screen
+      // mobile screen
       if (constrains.maxWidth < 657) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,

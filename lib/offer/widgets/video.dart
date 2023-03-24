@@ -36,25 +36,61 @@ class _YoutubeAppDemoState extends State<YoutubeAppDemo> {
   Widget build(BuildContext context) {
     return YoutubePlayerScaffold(
       controller: _controller,
+      aspectRatio: 16 / 9,
       builder: (context, player) {
         return Scaffold(
+            // backgroundColor: Colors.red,
           body: LayoutBuilder(
             builder: (context, constraints) {
               if (kIsWeb && constraints.maxWidth > 750) {
-                return Column(
-                  children: [
-                    player,
-                    const Expanded(child: VideoPositionIndicator()),
-                  ],
+                return Container(
+                    // height: 600,
+                    width: 800,
+                    color: Colors.transparent,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        player,
+                        const VideoPositionIndicator(),
+                      ],
+                    ),
+                  )
                 );
               }
 
-              return Column(
-                children: [
-                player,
-                  const VideoPositionIndicator(),
-                  // const Controls(),
-                ],
+              return Container(
+                width: 800,
+                color: Colors.transparent,
+                //height: 260,
+
+
+                // decoration: const BoxDecoration(
+                    // gradient: LinearGradient(
+                    //   begin: Alignment.topCenter,
+                    //   end: Alignment.bottomRight,
+                    //   stops: [
+                    //     0.4,
+                    //     0.6,
+                    //     // 0.7,
+                    //     0.8,
+                    //   ],
+                    //   colors: [
+                    //     Colors.white,
+                    //     Color(0xffE5FEF6),
+                    //     Color(0xffC3FCEA),
+                    //     // Color(0xff88F9D6),
+                    //   ],
+                    // )),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      player,
+                      VideoPositionIndicator(),
+                      // const Controls(),
+                    ],
+                  ),
+                ),
               );
             },
           ),
@@ -86,6 +122,8 @@ class VideoPositionIndicator extends StatelessWidget {
         final duration = controller.metadata.duration.inMilliseconds;
 
         return LinearProgressIndicator(
+          backgroundColor: Colors.purple.withOpacity(0),
+          color: Colors.deepOrange,
           value: duration == 0 ? 0 : position / duration,
           minHeight: 1,
         );
